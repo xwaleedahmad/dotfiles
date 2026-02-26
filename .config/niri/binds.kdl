@@ -73,16 +73,16 @@ binds {
     Mod+D repeat=false { toggle-overview; }
 
     Mod+M { maximize-window-to-edges; }
+
     Mod+Shift+Return { maximize-column; }
     Mod+Shift+Backspace { fullscreen-window; }
+    Mod+Shift+Space { set-column-width "50%"; }
+
     Mod+Ctrl+Return repeat=false { close-window; }
-    Mod+Alt+Return { center-column; }
 
-    // Center all fully visible columns on screen.
-    // Mod+Ctrl+C { center-visible-columns; }
-
-    // Makes the column "fill the rest of the space".
-    Mod+Alt+Space { expand-column-to-available-width; }
+    Mod+Alt+Space { center-column; }
+    Mod+Alt+Return { expand-column-to-available-width; }
+    // Mod+Alt+Space { center-visible-columns; }
 
     // change focus between windows.
     Mod+Left  { focus-column-left; }
@@ -203,7 +203,7 @@ binds {
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
     // rather than stacked on top of each other.
-    Mod+W { toggle-column-tabbed-display; }
+    Mod+Ctrl+Space { toggle-column-tabbed-display; }
 
     // commands that move across workspaces when reaching
     // the first or last window in a column.
