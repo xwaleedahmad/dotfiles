@@ -1,0 +1,10 @@
+// Add lines like this to spawn processes at startup.
+// Note that running niri as a session supports xdg-desktop-autostart,
+
+spawn-at-startup "kdeconnectd"  // To connect to the phone
+spawn-sh-at-startup "clipman store"  // To Store the clipboard
+
+// To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
+
+// spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
+// spawn-at-startup "qs" "-c" "noctalia-shell"

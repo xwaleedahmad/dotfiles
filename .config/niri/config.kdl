@@ -1,0 +1,61 @@
+// environment variables
+environment {
+  QT_QPA_PLATFORMTHEME "gtk3"
+  QT_QPA_PLATFORMTHEME_QT6 "gtk3"
+//   ELECTRON_OZONE_PLATFORM_HINT "wayland"
+}
+
+// niri overview background color
+overview {
+    backdrop-color "#1e1e2e"    
+}
+
+// Disable the hot corners.
+gestures {
+    hot-corners {
+        off
+    }
+}
+
+// Uncomment this to disable the "Important Hotkeys" pop-up at startup.
+hotkey-overlay {
+     skip-at-startup
+}
+
+// You can change the path where screenshots are saved.
+// The path is formatted with strftime(3) to give you the screenshot date and time.
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+// Animation settings.
+animations {
+    // Uncomment to turn off all animations.
+    // off
+
+    // Slow down all animations by this factor. Values below 1 speed them up instead.
+    // slowdown 3.0
+}
+
+// Spawn processes at startup
+include "startup.kdl"
+
+// Input device configuration.
+include "inputs.kdl"
+
+// Settings that influence how windows are positioned and sized.
+include "layout.kdl"
+
+// Window rules let you adjust behavior for individual windows.
+include "window-rules.kdl"
+
+// Niri keybindings
+include "binds.kdl"
+
+// Mouse Cursor customization 
+include "dms/cursor.kdl"
+
+// You can configure outputs by their name, which you can find
+// by running `niri msg outputs` while inside a niri instance.
+include "dms/outputs.kdl"
+
+// System colors
+include "dms/colors.kdl"
