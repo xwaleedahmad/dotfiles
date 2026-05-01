@@ -5,7 +5,6 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d "$ZINIT_HOME/.git" ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
-
 ### --- Core Config & History  --- ###
 
 HISTFILE="$HOME/.zsh_history"
@@ -16,11 +15,8 @@ setopt SHARE_HISTORY            # Share history between multiple tabs
 setopt HIST_IGNORE_DUPS         # Don't save the same command twice in a row
 setopt HIST_IGNORE_SPACE        # Don't save commands starting with space (good for passwords)
 
-
 ### --- Environment & Paths --- ###
 
-# We add paths directly. We DO NOT source scripts (like source cargo/env) 
-# because that requires reading files from disk, which is slow.
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.bun/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
@@ -31,6 +27,15 @@ export QT_QPA_PLATFORMTHEME=qt6ct
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' # config config --local status.showUntrackedFiles no
 alias pixel_cam='scrcpy --video-source=camera --camera-size=1920x1080 --capture-orientation=180 --no-audio --v4l2-sink=/dev/video2'
 alias ff='fastfetch'
+
+### --- SSH Key Management --- ###
+
+[[ -f ~/.keychain/$HOST-sh ]] && source ~/.keychain/$HOST-sh > /dev/null
+
+if ! ssh-add -l >/dev/null 2>&1; then
+    eval $(keychain --eval --quiet --nogui ~/.ssh/id_ed25519_github)
+fi
+
 
 # Bun Completions Optimization:
 # Instead of sourcing the huge '_bun' file, we just add the folder to 'fpath'.
@@ -57,12 +62,6 @@ node() { zsh_nvm_lazy_load node "$@" }
 npm()  { zsh_nvm_lazy_load npm "$@" }
 npx()  { zsh_nvm_lazy_load npx "$@" }
 nvm()  { zsh_nvm_lazy_load nvm "$@" }
-
-
-### --- The Prompt (Starship) --- ###
-
-eval "$(starship init zsh)"
-
 
 ### --- Plugins (Turbo Mode / Async) --- ###
 
@@ -120,4 +119,9 @@ zstyle ':fzf-tab:complete:*' fzf-preview \
   else \
     bat --style=numbers --color=always --line-range :500 "$realpath" 2>/dev/null; \
   fi'
+
+
+### --- Prompt --- ###
+
+eval "$(starship init zsh)"
 
