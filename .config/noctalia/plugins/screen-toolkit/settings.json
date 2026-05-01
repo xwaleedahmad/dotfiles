@@ -38,9 +38,9 @@
   "resultHsl": "",
   "colorCapturePath": "",
   "colorCacheBust": 0,
-  "ocrResult": "“No place is boring,\nif you've had a good night's sleep\nand have a pocket full of unexposed film.”",
+  "ocrResult": "» nvim .config/niri/binds.kdl",
   "ocrCapturePath": "/tmp/screen-toolkit-ocr.png",
-  "translateResult": "„Kein Ort ist langweilig,\nwenn Sie gut geschlafen haben\nund eine Tasche voller unbelichteter Filme haben.“",
+  "translateResult": "",
   "qrResult": "http://en.m.wikipedia.org",
   "qrCapturePath": "/tmp/screen-toolkit-qr.png"
 }

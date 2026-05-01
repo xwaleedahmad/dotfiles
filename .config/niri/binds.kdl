@@ -25,7 +25,9 @@ binds {
     Mod+Ctrl+B { spawn-sh "qs -c noctalia-shell ipc call bar toggle"; }
     Mod+Ctrl+E { spawn-sh "qs -c noctalia-shell ipc call launcher emoji"; }
     Mod+Ctrl+N { spawn-sh "qs -c noctalia-shell ipc call notifications toggleHistory"; }
-    Mod+Ctrl+V { spawn-sh "qs -c noctalia-shell ipc call plugin:clipper openPanel"; }
+    Mod+Ctrl+V { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
+    Mod+Ctrl+T { spawn-sh "qs -c noctalia-shell ipc call plugin:translator toggle"; }
+    Mod+Ctrl+U { spawn-sh "qs -c noctalia-shell ipc call plugin:simple-notes toggle"; }
     Mod+Ctrl+L { spawn-sh "qs -c noctalia-shell ipc call plugin:screen-toolkit lens"; }
     Mod+Ctrl+Q { spawn-sh "qs -c noctalia-shell ipc call plugin:screen-toolkit qr"; }
     Mod+Ctrl+O { spawn-sh "qs -c noctalia-shell ipc call plugin:screen-toolkit ocr"; }
