@@ -1,0 +1,82 @@
+// Niri will draw focus ring and border *around* windows that agree to omit their
+// client-side decorations.
+prefer-no-csd
+
+layout {
+    background-color "#1e1e2e"
+    gaps 8
+    // When to center a column when changing focus, options are:
+    // - "never", default behavior, focusing an off-screen column will keep at the left or right edge of the screen.
+    // - "always", the focused column will always be centered.
+    // - "on-overflow", focusing a column will center it if it doesn't fit
+    //   together with the previously focused column.
+    center-focused-column "never"
+
+    preset-column-widths {
+        // The default preset widths are 1/3, 1/2 and 2/3 of the output.
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    preset-window-heights { 
+        proportion 0.5
+        proportion 1.0
+   }
+
+    focus-ring {
+        // off
+        width 2
+
+        // Colors can be set in a variety of ways:
+        // - CSS named colors: "red"
+        // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
+        // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
+        active-color "#b4befe"
+
+        // Color of the ring on inactive monitors.
+        // The focus ring only draws around the active window, so the only place
+        // where you can see its inactive-color is on other monitors.
+        inactive-color "#505050"
+    }
+
+    // You can also add a border. It's similar to the focus ring, but always visible.
+    border {
+        off
+        width 4
+        active-color "#ffc87f"
+        inactive-color "#505050"
+        // Color of the border around windows that request your attention.
+        urgent-color "#9b0000"
+    }
+
+    shadow {
+        // Uncomment the next line to enable shadows.
+        // on
+
+        // By default, the shadow draws only around its window, and not behind it.
+        // draw-behind-window true
+
+        // Softness controls the shadow blur radius.
+        softness 30
+
+        // Spread expands the shadow.
+        spread 5
+
+        // Offset moves the shadow relative to the window.
+        offset x=0 y=5
+
+        // You can also change the shadow color and opacity.
+        color "#0007"
+    }
+
+    // Struts shrink the area occupied by windows, similarly to layer-shell panels.
+    // You can think of them as a kind of outer gaps. They are set in logical pixels.
+    struts {
+        left 4
+        right 4
+        top 3
+        bottom 4
+    }
+}
+

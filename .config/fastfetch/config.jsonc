@@ -1,0 +1,145 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "arch",
+    "color": {
+      "1": "38;2;180;190;254", // #B4BEFE
+      "2": "38;2;180;190;254"
+    },
+    "padding": {
+      "left": 6,
+      "right": 10,
+      "top": 2
+    }
+  },
+  "display": {
+    "separator": " ",
+    "color": {
+      "keys": "38;2;180;190;254",
+      "title": "38;2;180;190;254"
+    }
+  },
+  "modules": [
+    {
+      "type": "os",
+      "key": "╭─{icon} OS",
+      "keyColor": "38;2;180;190;254"
+    },
+    {
+      "type": "kernel",
+      "key": "├─ Kernel",
+      "keyColor": "38;2;180;190;254"
+    },
+    {
+      "type": "bios",
+      "key": "├─ Bios",
+      "keyColor": "38;2;180;190;254"
+    },
+    {
+      "type": "packages",
+      "key": "├─󰏖 Packages",
+      "keyColor": "38;2;180;190;254"
+    },
+    {
+      "type": "uptime",
+      "key": "└─󰅐 Start Time",
+      "keyColor": "38;2;180;190;254"
+    },
+    "break",
+    {
+      "type": "wm",
+      "key": "╭─ WM",
+      "keyColor": "38;2;180;190;254"
+    },
+    {
+      "type": "de",
+      "key": "├─ DE",
+      "keyColor": "38;2;180;190;254"
+    },
+    {
+      "type": "lm",
+      "key": "├─󰧨 LM",
+      "keyColor": "38;2;180;190;254"
+    },
+    {
+      "type": "shell",
+      "key": "├─ Shell",
+      "keyColor": "38;2;180;190;254"
+    },
+    {
+      "type": "terminal",
+      "key": "├─ Terminal",
+      "keyColor": "38;2;180;190;254",
+      "format": "{pretty-name}"
+    },
+    {
+      "type": "terminalfont",
+      "key": "├─ Font",
+      "keyColor": "38;2;180;190;254"
+    },
+    {
+      "type": "theme",
+      "key": "├─󰉼 Themes",
+      "keyColor": "38;2;180;190;254"
+    },
+    {
+      "type": "icons",
+      "key": "└─󰀻 Icons",
+      "keyColor": "38;2;180;190;254"
+    },
+    "break",
+    {
+      "type": "host",
+      "key": "╭─󰌢 PC",
+      "keyColor": "38;2;180;190;254"
+    },
+    {
+      "type": "board",
+      "key": "├─ Board",
+      "keyColor": "38;2;180;190;254"
+    },
+    {
+      "type": "cpu",
+      "key": "├─󰻠 CPU",
+      "keyColor": "38;2;180;190;254",
+      "temp": true,
+      "freqNdigits": 1
+    },
+    {
+      "type": "memory",
+      "key": "├─󰑭 RAM",
+      "keyColor": "38;2;180;190;254"
+    },
+    {
+      "type": "swap",
+      "key": "├─󰓡 Zram",
+      "keyColor": "38;2;180;190;254"
+    },
+    {
+      "type": "disk",
+      "key": "├─ Disk",
+      "keyColor": "38;2;180;190;254",
+      "format": "{size-used} / {size-total} ({size-percentage}) - {filesystem} {mountpoint}"
+    },
+    {
+      "type": "display",
+      "key": "├─󰍹 Display(s)",
+      "keyColor": "38;2;180;190;254"
+    },
+    {
+      "type": "gpu",
+      "key": "├─󰍛 GPU",
+      "keyColor": "38;2;180;190;254"
+    },
+    {
+      "type": "opengl",
+      "key": "├─󰍛 OpenGL",
+      "keyColor": "38;2;180;190;254"
+    },
+    {
+      "type": "vulkan",
+      "key": "└─󰍛 Vulkan",
+      "keyColor": "38;2;180;190;254"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+window-rule {
+    geometry-corner-radius 12
+    // enable rounded corners for all windows.
+    clip-to-geometry true
+    // it will clip the app to follow the corner radius.
+    tiled-state true
+    // if enabled transparent window will show the solid color in bg instead of background   
+    draw-border-with-background false
+    open-maximized true
+    opacity 0.95
+
+    background-effect {
+        blur true
+        // noise 0.3
+    }
+    popups {
+        opacity 0.94
+        geometry-corner-radius 12
+        background-effect {
+            blur true
+        }
+    }
+}
+
+window-rule {
+    match app-id="brave-*"
+    exclude title="WhatsApp Web"
+    match app-id="google-chrome"
+    opacity 1.0
+}
+
+// Open the Firefox picture-in-picture player as floating by default.
+window-rule {
+    match app-id="firefox$" title="^Picture-in-Picture$"
+    open-floating true
+}
+
+// Example: block out two password managers from screen capture.
+window-rule {
+    //  match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    //  match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    match app-id="polkit-gnome-authentication-agent-1" title=""
+    block-out-from "screen-capture"
+//  Use this instead if you want them visible on third-party screenshot tools.
+    //  block-out-from "screencast"
+}
