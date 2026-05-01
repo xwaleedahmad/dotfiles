@@ -72,11 +72,11 @@ layout {
 
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
     // You can think of them as a kind of outer gaps. They are set in logical pixels.
-    struts {
-        left 4
-        right 4
-        top 3
-        bottom 4
-    }
+    // struts {
+    //     left 4
+    //     right 4
+    //     top 3
+    //     bottom 4
+    // }
 }
 
