@@ -1,0 +1,102 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+
+[╭─](bold color_accent)[](color_accent)\
+$os\
+[](bold fg:color_accent)[](bold bg:color_accent fg:transparent)\
+$username\
+[](bold fg:color_accent)[](bold bg:color_accent fg:transparent)\
+$directory\
+[](bold fg:color_accent)[](bold fg:transparent bg:bg_white )\
+$time\
+[](fg:bg_white)\
+$git_branch $git_status\
+$fill\
+$line_break[╰─](bold color_accent)$character"""
+
+#To show the verion
+# $fill $nodejs $c $rust $golang $php $python $java $ruby $swift $kotlin $haskell\
+
+palette = 'catppuccin'
+
+[palettes.catppuccin]
+bg_white = '#f5e0dc'
+color_green = '#a6e3a1'
+color_red =   '#f38ba8'
+color_black = '#11111b'
+color_accent = '#b4befe'
+transparent = '#1F1F2F'
+
+[os]
+disabled = false
+style = "bg:color_accent fg:color_black"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+EndeavourOS = ""
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Pop = ""
+
+[username]
+show_always = true
+style_user = "bg:color_accent fg:color_black"
+style_root = "bg:color_accent fg:color_black"
+format = '[ $user ]($style)'
+
+[directory]
+style = "fg:color_black bg:color_accent"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[git_branch]
+symbol = " "
+style = "fg:color_green"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "fg:color_green"
+format = '[$all_status$ahead_behind]($style)'
+
+[time]
+disabled = false
+time_format = "%I:%M"
+format = '[[ $time ](fg:color_black bg:bg_white)]($style)'
+
+[line_break]
+disabled = false
+
+[fill]
+symbol = ' '
+
+[character]
+disabled = false
+success_symbol = '[»](bold fg:color_accent)'
+error_symbol = '[»](bold fg:color_red)'
+vimcmd_symbol = '[](bold fg:color_accent)'
+

@@ -1,0 +1,50 @@
+environment {
+    QT_QPA_PLATFORM "wayland"
+    QT_QPA_PLATFORMTHEME "qt6ct"
+    XDG_SESSION_TYPE "wayland"
+    XDG_CURRENT_DESKTOP "niri"
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+}
+
+overview {
+    backdrop-color "#1e1e2e"    
+}
+
+gestures {
+    hot-corners {
+        off
+    }
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+cursor {
+    xcursor-theme "Bibata-Modern-Ice"
+    xcursor-size 24
+    hide-when-typing
+}
+
+output "HDMI-A-1" {
+    scale 1
+    position x=0 y=0
+}
+output "eDP-1" {
+    scale 1.10
+    position x=0 y=1080
+}
+
+include "inputs.kdl"
+include "layout.kdl"
+include "startup.kdl"
+include "noctalia.kdl"
+include "keybinds.kdl"
+include "animations.kdl"
+include "window-rules.kdl"
+
+
+
+
