@@ -1,0 +1,53 @@
+{
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "editor.fontSize": 18,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.fontFamily": "FiraCode Nerd Font Mono",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "window.controlsStyle": "native",
+    "workbench.navigationControl.enabled": false,
+    "workbench.browser.showInTitleBar": false,
+    "window.commandCenter": false,
+    "window.menuBarVisibility": "toggle",
+    "editor.minimap.autohide": "mouseover",
+    "workbench.iconTheme": "material-icon-theme",
+    "chat.titleBar.openInAgentsWindow.enabled": false,
+    "workbench.activityBar.location": "top",
+    "workbench.layoutControl.enabled": false,
+    "extensions.ignoreRecommendations": true,
+    "window.title": "",
+    "window.titleBarStyle": "native",
+    "catppuccin.accentColor": "lavender",
+    "catppuccin.bracketMode": "neovim",
+    "window.customTitleBarVisibility": "never",
+    "workbench.colorCustomizations": {
+        "editorCursor.foreground": "#b4befe",
+    },
+    // ========================================================================
+    // Neovim integration settings 
+    // ========================================================================
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "vscode-neovim.neovimExecutablePaths.win32": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+    "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+    // neovim console logging adjustments
+    "vscode-neovim.logLevel": "error",
+    "vscode-neovim.logOutputToConsole": false,
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "diffEditor.ignoreTrimWhitespace": false,
+    // prevent code folds from automatically opening when the cursor touches them
+    "editor.foldingStrategy": "indentation",
+    "editor.unfoldOnClickAfterEndOfLine": false,
+    "editor.gotoLocation.multipleReferences": "peek",
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "typescriptreact": false
+    }
+}
