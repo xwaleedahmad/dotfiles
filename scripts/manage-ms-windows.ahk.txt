@@ -1,0 +1,48 @@
+﻿#Requires AutoHotkey v2.0
+
+; ==========================================
+; Win + Ctrl + Enter -> Close active window
+; ==========================================
+#^Enter::
+{
+    WinClose("A")
+}
+
+; ==========================================
+; Win + Shift + Enter -> Toggle Maximize
+; ==========================================
+#+Enter::
+{
+    if WinGetMinMax("A") = 1
+        WinRestore("A")
+    else
+        WinMaximize("A")
+}
+
+; ==========================================
+; Win + Alt + Space -> Minimize active window
+; ==========================================
+#!Space::
+{
+    WinMinimize("A")
+}
+
+; ==========================================
+; Win + Enter -> Open Windows Terminal
+; ==========================================
+#Enter::
+{
+    Run("wt.exe")
+    WinWait("ahk_exe WindowsTerminal.exe", , 5)
+    WinActivate("ahk_exe WindowsTerminal.exe")
+}
+
+; ==========================================
+; Win + B -> Open NEW Brave window
+; ==========================================
+#b::
+{
+    Run('brave.exe --new-window')
+    WinWait("ahk_exe brave.exe", , 5)
+    WinActivate("ahk_exe brave.exe")
+}

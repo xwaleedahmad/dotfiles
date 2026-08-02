@@ -1,0 +1,88 @@
+{
+  "$schema": "https://vicinae.com/schemas/config.json",
+  "font": {
+    "normal": {
+      "family": "Noto Sans",
+      "size": 12
+    }
+  },
+  "theme": {
+    "dark": {
+      "name": "catppuccin-mocha"
+    }
+  },
+  "telemetry": {
+    "system_info": false
+  },
+  "launcher_window": {
+    "opacity": 0.94,
+    "layer_shell": {
+      "layer": "overlay"
+    }
+  },
+  "keybinds": {
+    "toggle-action-panel": "control+/"
+  },
+  "favorites": [],
+  "providers": {
+    "applications": {
+      "entrypoints": {
+        "nwg-look": {
+          "alias": "nwg"
+        }
+      }
+    },
+    "browser-extension": {
+      "enabled": false
+    },
+    "core": {
+      "entrypoints": {
+        "about": {
+          "enabled": false
+        },
+        "keybind-settings": {
+          "enabled": false
+        },
+        "oauth-token-store": {
+          "enabled": true
+        },
+        "open-default-config": {
+          "enabled": true
+        },
+        "report-bug": {
+          "enabled": false
+        },
+        "search-builtin-icons": {
+          "enabled": false
+        },
+        "settings": {
+          "enabled": false
+        },
+        "sponsor": {
+          "enabled": false
+        }
+      }
+    },
+    "files": {
+      "enabled": false
+    },
+    "manage-shortcuts": {
+      "entrypoints": {
+        "create": {
+          "enabled": true
+        }
+      }
+    },
+    "scripts": {
+      "preferences": {
+        "customDirs": ["/home/waleed/scripts"]
+      }
+    },
+    "system": {
+      "enabled": false
+    },
+    "wm": {
+      "enabled": false
+    }
+  }
+}

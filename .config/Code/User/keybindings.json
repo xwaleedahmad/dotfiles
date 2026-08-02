@@ -1,0 +1,205 @@
+[
+  // ================================================================
+  // Navigation
+  // ================================================================
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateRight"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.navigateUp"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.navigateDown"
+  },
+  // switch buffers
+  {
+    "key": "shift+h",
+    "command": "workbench.action.previousEditor",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "shift+l",
+    "command": "workbench.action.nextEditor",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  // move lines
+  {
+    "key": "alt+k",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && (neovim.mode == 'normal' || neovim.mode == 'visual')"
+  },
+  {
+    "key": "alt+j",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && (neovim.mode == 'normal' || neovim.mode == 'visual')"
+  },
+  // resize editor groups
+  {
+    "key": "ctrl+right",
+    "command": "workbench.action.decreaseViewWidth",
+    "when": "neovim.mode == 'normal'"
+  },
+  {
+    "key": "ctrl+left",
+    "command": "workbench.action.increaseViewWidth",
+    "when": "neovim.mode == 'normal'"
+  },
+  {
+    "key": "ctrl+up",
+    "command": "workbench.action.increaseViewHeight",
+    "when": "neovim.mode == 'normal'"
+  },
+  {
+    "key": "ctrl+down",
+    "command": "workbench.action.decreaseViewHeight",
+    "when": "neovim.mode == 'normal'"
+  },
+  // ================================================================
+  // File Explorer
+  // ================================================================
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+a",
+    "command": "explorer.newFolder",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "x",
+    "command": "filesExplorer.cut",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  // ================================================================
+  // Follow neovim behaviour
+  // ================================================================
+  // escape
+  {
+    "key": "ctrl+[",
+    "command": "extension.vim_escape",
+    "when": "editorTextFocus && vim.active && neovim.mode != 'normal'"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "closePeakWidget",
+    "when": "peakWidgetVisible && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "workbench.action.closeQuickOpen",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "hideSuggestWidget",
+    "when": "suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "closefindwidget",
+    "when": "editorfocus && findwidgetvisible"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "workbench.action.closepanel",
+    "when": "panelvisible && panelfocus"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "workbench.action.focusactiveeditorgroup",
+    "when": "sidebarfocus || panelfocus || activepanelhasfocus"
+  },
+  // vim style code folding
+  {
+    "key": "z a",
+    "command": "editor.fold",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "z c",
+    "command": "editor.fold",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "z o",
+    "command": "editor.unfold",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  // ================================================================
+  // General
+  // ================================================================
+  // save file
+  {
+    "key": "ctrl+s",
+    "command": "workbench.action.files.save",
+    "when": "editorTextFocus && !inQuickOpen && !filesExplorerFocus"
+  },
+  // show hover information
+  {
+    "key": "shift+k",
+    "command": "editor.action.showHover",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  // terminal
+  {
+    "key": "ctrl+/",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  // copilot chat
+  {
+    "key": "ctrl+alt+i",
+    "command": "workbench.action.chat.toggle"
+  },
+  {
+    "key": "ctrl+shift+i",
+    "command": "inlineChat.start",
+    "when": "editorTextFocus"
+  },
+  // live server
+  {
+    "key": "ctrl+shift+alt+l",
+    "command": "extension.liveServer.goOnline",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+e",
+    "command": "extension.liveServer.goOffline",
+    "when": "editorTextFocus"
+  },
+  // markdown preview
+  {
+    "key": "ctrl+shift+alt+m",
+    "command": "markdown.togglePreview",
+    "when": "!terminalFocus && activeCustomEditorId == 'vscode.markdown.preview.editor' || editorFocus && !notebookEditorFocused && !terminalFocus && resourceLangId =~ /^(markdown|prompt|instructions|chatagent|skill)$/"
+  }
+]
