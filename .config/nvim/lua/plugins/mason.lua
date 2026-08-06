@@ -22,6 +22,7 @@ require("mason-lspconfig").setup({
 		"cssls",
 		"tailwindcss",
 		"vtsls",
+		"prismals",
 		"intelephense",
 		"laravel_ls",
 

@@ -26,6 +26,7 @@ local ensure_installed = {
 	"javascript",
 	"typescript",
 	"tsx",
+	"prisma",
 	"php",
 	"blade",
 }

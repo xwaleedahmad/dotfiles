@@ -1,4 +1,5 @@
 "$schema" = 'https://starship.rs/config-schema.json'
+palette = 'catppuccin'
 
 format = """
 [╭─](bold lavender)[](lavender)\
@@ -11,16 +12,6 @@ $directory\
 $git_branch $git_status\
 $fill\
 $line_break[╰─](bold lavender)$character"""
-
-palette = 'catppuccin'
-
-[palettes.catppuccin]
-crust = '#11111b'
-lavender = '#b4befe'
-red =   '#f38ba8'
-rosewater = '#f5e0dc'
-green = '#a6e3a1'
-transparent = '#1F1F2F'
 
 [os]
 disabled = false
@@ -77,11 +68,6 @@ format = '[ $symbol $branch ]($style)'
 style = "fg:green"
 format = '[$all_status$ahead_behind]($style)'
 
-[time]
-disabled = false
-time_format = "%I:%M"
-format = '[[ $time ](fg:crust bg:rosewater)]($style)'
-
 [line_break]
 disabled = false
 
@@ -94,3 +80,22 @@ success_symbol = '[»](bold fg:lavender)'
 error_symbol = '[»](bold fg:red)'
 vimcmd_symbol = '[](bold fg:lavender)'
 
+[palettes.catppuccin]
+theme = '#A7B48F'
+crust = '#11111b'
+text = '#cdd6f4'
+red =   '#f38ba8'
+blue = '#89b4fa'
+teal = '#94e2d5'
+sky = '#89dceb'
+pink = '#f5c2e7'
+green = '#a6e3a1'
+yellow = '#f9e2af'
+maroon = '#eba0ac'
+lavender = '#b4befe'
+rosewater = '#f5e0dc'
+peach = '#fab387'
+mauve = '#cba6f7'
+flamingo = '#f2cdcd'
+sapphire = '#74c7ec'
+transparent = '#1F1F2F'

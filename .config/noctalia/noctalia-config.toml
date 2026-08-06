@@ -211,15 +211,29 @@ screen_time_enabled = true
 ram_pct_activity_threshold = 80
 
 [theme]
-builtin = "Ayu"
-community_palette = "Catppuccin Lavender"
+builtin = "Catppuccin"
+community_palette = "Catppuccin Mocha Lavender"
 custom_palette = "catppuccin-custom"
 mode = "dark"
 source = "community"
+wallpaper_scheme = "m3-rainbow"
 
     [theme.templates]
-    builtin_ids = [ "gtk3", "gtk4", "kcolorscheme", "niri", "qt" ]
-    community_ids = [ "obsidian", "bat", "discord", "lazygit", "obs", "yazi" ]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "kcolorscheme", "niri", "qt", "wezterm" ]
+    community_ids = [
+        "antigravity",
+        "opencode",
+        "zen-browser",
+        "discord",
+        "obsidian",
+        "vscode",
+        "fuzzel",
+        "obs",
+        "papirus-icons",
+        "bat",
+        "lazygit",
+        "yazi"
+    ]
 
 [wallpaper]
 directory = "/home/waleed/Pictures/Wallpapers"
@@ -239,15 +253,21 @@ transition_on_startup = true
     path = "/home/waleed/Pictures/Wallpapers/catppuccin-mocha/31.jpg"
 
     [[wallpaper.favorite]]
-    community_palette = "Catppuccin Lavender"
+    community_palette = "Catppuccin Mocha Lavender"
     palette_source = "community"
     path = "/home/waleed/Pictures/Wallpapers/catppuccin-mocha/31.jpg"
     theme_mode = "dark"
 
     [[wallpaper.favorite]]
-    community_palette = "Catppuccin Lavender"
+    community_palette = "Catppuccin Mocha Lavender"
     palette_source = "community"
     path = "/home/waleed/Pictures/Wallpapers/catppuccin-mocha/29.png"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    community_palette = "Creamy Forest"
+    palette_source = "community"
+    path = "/home/waleed/Pictures/Wallpapers/32.jpg"
     theme_mode = "dark"
 
 [widget.Wayvibes-Toggle]

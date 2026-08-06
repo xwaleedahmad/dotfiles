@@ -20,6 +20,7 @@ vim.lsp.enable({
 	"tailwindcss",
 	"vtsls",
 	"intelephense",
+	"prismals",
 	"laravel_ls",
 	"copilot",
 })
