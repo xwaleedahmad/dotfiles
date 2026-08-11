@@ -1,6 +1,7 @@
 vim.pack.add({
 	-- UI Components
 	"https://github.com/catppuccin/nvim",
+	"https://github.com/neanias/everforest-nvim",
 	"https://github.com/RRethy/base16-nvim",
 	"https://github.com/akinsho/bufferline.nvim",
 	"https://github.com/nvim-lualine/lualine.nvim",
@@ -17,6 +18,7 @@ vim.pack.add({
 	"https://github.com/chentoast/marks.nvim",
 	"https://github.com/sphamba/smear-cursor.nvim",
 	"https://github.com/3rd/image.nvim",
+	"https://github.com/MeanderingProgrammer/render-markdown.nvim",
 	{ src = "https://github.com/iamcco/markdown-preview.nvim", build = ":call mkdp#util#install()" },
 
 	-- Treesitter & Syntax
@@ -46,10 +48,7 @@ vim.pack.add({
 	-- Completion & Snippets
 	"https://github.com/L3MON4D3/LuaSnip",
 	"https://github.com/rafamadriz/friendly-snippets",
-	{
-		src = "https://github.com/saghen/blink.cmp",
-		version = vim.version.range("^1"),
-	},
+	{ src = "https://github.com/saghen/blink.cmp", version = vim.version.range("^1") },
 })
 
 -----------------------------------------------------------------------------------------------------------------

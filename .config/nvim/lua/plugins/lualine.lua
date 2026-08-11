@@ -49,7 +49,7 @@ require("lualine").setup({
 				lsp_name,
 				icon = "󰒋",
 				cond = function()
-					return lsp_name() ~= ""
+					return vim.api.nvim_win_get_width(0) >= 120 and lsp_name() ~= ""
 				end,
 			},
 		},

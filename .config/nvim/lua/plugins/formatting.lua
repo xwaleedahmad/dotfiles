@@ -3,14 +3,12 @@ require("conform").setup({
 	-- Formatter for each filetype
 	formatters_by_ft = {
 		lua = { "stylua" },
-
 		json = { "prettier" },
 		yaml = { "prettier" },
 		dockerfile = { "dockerfmt" },
 
 		html = { "prettier" },
 		css = { "prettier" },
-
 		markdown = { "prettier" },
 
 		javascript = { "prettier" },

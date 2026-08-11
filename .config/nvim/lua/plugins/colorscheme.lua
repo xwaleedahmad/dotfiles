@@ -20,5 +20,9 @@ require("catppuccin").setup({
 		noice = true,
 	},
 })
+require("everforest").setup({
+	background = "hard",
+})
 
 vim.cmd.colorscheme("catppuccin-mocha")
+-- vim.cmd.colorscheme("everforest")
