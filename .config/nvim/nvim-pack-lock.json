@@ -21,10 +21,6 @@
       "rev": "619363c30309d29ffa631e67c8183f2a72caa373",
       "src": "https://github.com/stevearc/conform.nvim"
     },
-    "everforest-nvim": {
-      "rev": "a0e9edc57379e8feafc6ba207c26dbb12fc1b6d8",
-      "src": "https://github.com/neanias/everforest-nvim"
-    },
     "friendly-snippets": {
       "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
       "src": "https://github.com/rafamadriz/friendly-snippets"

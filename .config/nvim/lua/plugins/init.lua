@@ -1,7 +1,6 @@
 vim.pack.add({
 	-- UI Components
 	"https://github.com/catppuccin/nvim",
-	"https://github.com/neanias/everforest-nvim",
 	"https://github.com/RRethy/base16-nvim",
 	"https://github.com/akinsho/bufferline.nvim",
 	"https://github.com/nvim-lualine/lualine.nvim",

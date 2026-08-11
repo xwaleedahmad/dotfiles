@@ -20,9 +20,22 @@ require("catppuccin").setup({
 		noice = true,
 	},
 })
-require("everforest").setup({
-	background = "hard",
-})
 
 vim.cmd.colorscheme("catppuccin-mocha")
--- vim.cmd.colorscheme("everforest")
+
+local colors = require("catppuccin.palettes").get_palette("mocha")
+vim.api.nvim_set_hl(0, "SnacksDashboardHeader", {
+	fg = colors.lavender,
+})
+vim.api.nvim_set_hl(0, "SnacksDashboardIcon", {
+	fg = colors.lavender,
+})
+vim.api.nvim_set_hl(0, "SnacksDashboardKey", {
+	fg = colors.lavender,
+})
+vim.api.nvim_set_hl(0, "SnacksDashboardDesc", {
+	fg = colors.lavender,
+})
+vim.api.nvim_set_hl(0, "SnacksDashboardFooter", {
+	fg = colors.lavender,
+})

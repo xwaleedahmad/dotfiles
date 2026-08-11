@@ -45,6 +45,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 eval "$(mise activate zsh)"
+eval "$(fzf --zsh)"
 
 ### --- Plugins (Turbo Mode / Async) --- ###
 
@@ -72,20 +73,32 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit ice depth=1
 zinit light jeffreytse/zsh-vi-mode
 
+function zvm_after_init() {
+  source /usr/share/fzf/key-bindings.zsh
+}
+
 ### ---Configuration & Styles --- ###
 
-# FZF: Catppuccin Mocha Theme (Applies in the standard fzf tool)
+# Catppuccin Mocha Theme
+color_bg="#313244"
+color_text="#cdd6f4"
+color_red="#f38ba8"
+color_blue="#89b4fa"
+color_green="#a6e3a1"
+color_lavender="#b4befe"
+color_rosewater="#f5e0dc"
+
 export FZF_DEFAULT_OPTS=" \
-  --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
-  --color=fg:#cdd6f4,header:#f38ba8,info:#94e2d5,pointer:#89b4fa,marker:#f5e0dc \
-  --color=fg+:#cdd6f4,prompt:#89b4fa,hl+:#f38ba8 \
-  --prompt='❯ ' --marker='✓' --pointer='▶' --layout=reverse --border --info=inline"
+  --color=bg+:${color_bg},spinner:${color_lavender},hl:${color_lavender} \
+  --color=fg:${color_text},header:${color_lavender},info:${color_lavender},pointer:${color_lavender},marker:${color_lavender} \
+  --color=fg+:${color_text},prompt:${color_lavender},hl+:${color_lavender} \
+  --color=border:${color_lavender} \
+  --prompt='❯ ' --marker='✓' --pointer='▶' "
 
 zstyle ':fzf-tab:*' fzf-flags \
   --height=70% \
-  --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
-  --color=fg:#cdd6f4,header:#f38ba8,info:#94e2d5,pointer:#89b4fa,marker:#f5e0dc \
-  --color=fg+:#cdd6f4,prompt:#89b4fa,hl+:#f38ba8,border:#89b4fa,separator:#89b4fa
+  --color=bg+:${color_bg},spinner:${color_lavender},hl:${color_lavender} \
+  --color=fg:${color_text},header:${color_lavender},info:${color_lavender},pointer:${color_lavender},marker:${color_lavender},border:${color_lavender},separator:${color_lavender}
 
 # Image Previews (Chafa) & File Previews (Bat)
 zstyle ':fzf-tab:complete:*' fzf-preview \
@@ -101,3 +114,9 @@ zstyle ':fzf-tab:complete:*' fzf-preview \
 ### --- Prompt --- ###
 
 eval "$(starship init zsh)"
+
+if [[ -o interactive ]]; then
+  clear
+  echo
+  fastfetch
+fi
