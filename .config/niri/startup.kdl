@@ -1,5 +1,4 @@
-// spawn-at-startup "qs" "-c" "noctalia-shell" // v4
-spawn-at-startup "noctalia" // v5
+spawn-at-startup "noctalia"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
