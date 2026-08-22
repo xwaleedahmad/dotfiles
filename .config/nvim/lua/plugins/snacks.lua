@@ -146,7 +146,7 @@ end, { desc = "Delete Buffers to the Left" })
 map({ "n", "t" }, "<C-/>", function()
 	Snacks.terminal.toggle(nil, {
 		cwd = get_root(),
-		win = { style = "float" },
+		-- win = { style = "" },
 	})
 end, { desc = "Toggle Terminal" })
 

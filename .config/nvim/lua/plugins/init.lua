@@ -1,7 +1,6 @@
 vim.pack.add({
 	-- UI Components
 	"https://github.com/catppuccin/nvim",
-	"https://github.com/RRethy/base16-nvim",
 	"https://github.com/akinsho/bufferline.nvim",
 	"https://github.com/nvim-lualine/lualine.nvim",
 	"https://github.com/MunifTanjim/nui.nvim", -- dependency for noice
@@ -19,13 +18,10 @@ vim.pack.add({
 	"https://github.com/3rd/image.nvim",
 	"https://github.com/MeanderingProgrammer/render-markdown.nvim",
 	{ src = "https://github.com/iamcco/markdown-preview.nvim", build = ":call mkdp#util#install()" },
+	"https://github.com/zeybek/camouflage.nvim",
 
 	-- Treesitter & Syntax
-	{
-		src = "https://github.com/nvim-treesitter/nvim-treesitter",
-		branch = "main",
-		build = ":TSUpdate",
-	},
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", branch = "main", build = ":TSUpdate" },
 	"https://github.com/folke/ts-comments.nvim",
 	"https://github.com/windwp/nvim-ts-autotag",
 
@@ -74,16 +70,6 @@ require("image").setup({ max_height_window_percentage = 80 })
 require("plugins.nvim-treesitter")
 require("ts-comments").setup()
 require("nvim-ts-autotag").setup()
-local hipatterns = require("mini.hipatterns")
-hipatterns.setup({
-	highlighters = {
-		fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
-		hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
-		todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
-		note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
-		hex_color = hipatterns.gen_highlighter.hex_color(),
-	},
-})
 
 -- LSP management, code completion, formatting & linting
 require("plugins.mason")
@@ -94,5 +80,7 @@ require("plugins.linting")
 -- UI components
 require("plugins.lualine")
 require("plugins.bufferline")
-require("plugins.noice")
-require("plugins.trouble")
+require("trouble").setup()
+
+-- For extra plugins that needs little configruation
+require("plugins.misc")

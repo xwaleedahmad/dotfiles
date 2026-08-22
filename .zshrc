@@ -26,6 +26,7 @@ fi
 ### --- Aliases & Functions --- ###
 
 alias ff='fastfetch'
+alias ll='ls -lh --color=auto'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' # dotfiles config --local status.showUntrackedFiles no
 
 phonecam() {

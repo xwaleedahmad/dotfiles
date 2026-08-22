@@ -8,9 +8,6 @@ map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 map("n", "<Esc>", ":nohlsearch<CR>", { desc = "Clear search highlights" })
 map("n", "<C-a>", "ggVG", { desc = "Select all" })
 
-map("n", "<leader>ul", "<cmd>CopilotToggle<cr>", { desc = "Toggle Copilot (global)" })
-map("n", "<leader>um", "<cmd>MarkdownPreviewToggle<CR>", { desc = "Toggle Markdown Preview" })
-
 -----------------------------------------------------------------
 -- Navigation
 -----------------------------------------------------------------
@@ -72,3 +69,36 @@ map("n", "<leader>uw", function()
 	vim.wo.wrap = not vim.wo.wrap
 	vim.wo.linebreak = vim.wo.wrap
 end, { desc = "Toggle Line Wrap" })
+
+-----------------------------------------------------------------
+-- Plugins
+-----------------------------------------------------------------
+
+-- Copilot
+map("n", "<leader>ul", "<cmd>CopilotToggle<cr>", { desc = "Toggle Copilot (global)" })
+map("n", "<leader>um", "<cmd>MarkdownPreviewToggle<CR>", { desc = "Toggle Markdown Preview" })
+
+-- Trouble keymaps
+map("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<CR>", {
+	desc = "Project Diagnostics",
+})
+map("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<CR>", {
+	desc = "Buffer Diagnostics",
+})
+map("n", "<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=right<CR>", {
+	desc = "LSP (definitions, references, implementations, etc.)",
+})
+map("n", "<leader>cs", "<cmd>Trouble symbols toggle focus=false<CR>", {
+	desc = "Symbols",
+})
+map("n", "<leader>xq", "<cmd>Trouble qflist toggle<CR>", {
+	desc = "Quickfix",
+})
+map("n", "<leader>xl", "<cmd>Trouble loclist toggle<CR>", {
+	desc = "Location List",
+})
+
+-- Camouflage
+map("n", "<leader>ut", "<cmd>CamouflageToggle<CR>", { desc = "Toggle Show/Hide Secrets" })
+map("n", "<leader>ct", "<cmd>CamouflageReveal<CR>", { desc = "Reveal Secret under cursor" })
+map("n", "<leader>cy", "<cmd>CamouflageYank<CR>", { desc = "Yank Secrets Value" })
