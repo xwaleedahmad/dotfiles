@@ -1,96 +1,52 @@
-[bar.default]
-capsule = true
-end = [ "tray", "notifications", "volume", "bluetooth", "network", "mirror", "battery" ]
-font_family = "Inter"
-margin_edge = 5
-margin_ends = 240
-margin_opposite_edge = 1
-reserve_space = false
-smart_auto_hide = true
-start = [ "workspaces", "Wayvibes-Toggle", "cpu", "ram", "bar", "privacy" ]
+[bar]
+order = [ "default" ]
 
-    [bar.default.actions]
-    middle = "none"
+    [bar.default]
+    capsule = true
+    capsule_thickness = 0.69999998807907104
+    center = [ "clock" ]
+    end = [ "tray", "notifications", "volume", "bluetooth", "network", "caffeine", "battery" ]
+    font_family = "Inter"
+    margin_edge = 4
+    margin_ends = 240
+    margin_opposite_edge = 1
+    padding = 6
+    reserve_space = false
+    smart_auto_hide = true
+    start = [ "workspaces", "Wayvibes-Toggle", "cpu", "ram", "privacy" ]
+    widget_spacing = 4
 
-[[control_center.shortcuts]]
-type = "wifi"
+        [bar.default.actions]
+        middle = "none"
 
-[[control_center.shortcuts]]
-type = "bluetooth"
+[control_center]
+show_session_button = false
 
-[[control_center.shortcuts]]
-type = "caffeine"
+    [[control_center.shortcuts]]
+    type = "wifi"
 
-[[control_center.shortcuts]]
-type = "dark_mode"
+    [[control_center.shortcuts]]
+    type = "bluetooth"
 
-[[control_center.shortcuts]]
-type = "8bury/lid-guard:lid-guard-toggle"
+    [[control_center.shortcuts]]
+    type = "dark_mode"
 
-[[control_center.shortcuts]]
-type = "noctalia/screen_recorder:toggle"
+    [[control_center.shortcuts]]
+    type = "8bury/lid-guard:lid-guard-toggle"
+
+    [[control_center.shortcuts]]
+    type = "noctalia/screen_recorder:toggle"
 
 [desktop_widgets]
 enabled = false
 schema_version = 2
-widget_order = [ "desktop-widget-0000000000000001", "desktop-widget-0000000000000002", "desktop-widget-0000000000000007" ]
-
-    [desktop_widgets.grid]
-    cell_size = 8
-    major_interval = 4
-    visible = true
-
-    [desktop_widgets.widget.desktop-widget-0000000000000001]
-    box_height = 280.0
-    box_width = 280.0
-    cx = 268.0
-    cy = 256.0
-    output = "HDMI-A-1"
-    rotation = 0.0
-    type = "fancy_audio_visualizer"
-
-        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
-        background = false
-        bloom_intensity = 0.70000000000000007
-        inner_diameter = 0.70000000000000007
-        secondary_color = "primary"
-        visualization_mode = "rings"
-
-    [desktop_widgets.widget.desktop-widget-0000000000000002]
-    box_height = 280.0
-    box_width = 280.0
-    cx = 1604.0
-    cy = 716.0
-    output = "HDMI-A-1"
-    rotation = 0.0
-    type = "fancy_audio_visualizer"
-
-        [desktop_widgets.widget.desktop-widget-0000000000000002.settings]
-        background = false
-        bloom_intensity = 0.60000000000000009
-        secondary_color = "primary"
-        visualization_mode = "rings"
-
-    [desktop_widgets.widget.desktop-widget-0000000000000007]
-    box_height = 32.0
-    box_width = 224.0
-    cx = 992.0
-    cy = 308.0
-    output = "HDMI-A-1"
-    rotation = 0.0
-    type = "audio_visualizer"
-
-        [desktop_widgets.widget.desktop-widget-0000000000000007.settings]
-        background = true
-        bands = 32
-        centered = false
-        mirrored = true
-        show_when_idle = true
+widget_order = []
 
 [location]
 address = "Sargodha, Pakistan"
 
 [lockscreen]
+blur_intensity = 0.099999997764825821
 fingerprint = false
 
 [lockscreen_widgets]
@@ -104,11 +60,13 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
     visible = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
-    box_height = 103.0
+    box_height = 70.0
     box_width = 400.0
     cx = 768.0
     cy = 752.0
     output = "eDP-1"
+    placement_height = 864.0
+    placement_width = 1536.0
     rotation = 0.0
     type = "login_box"
 
@@ -125,15 +83,18 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
         show_login_button = false
         show_media = false
         show_session_buttons = true
+        show_unlock_hint = false
         show_weather = false
 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
-    box_height = 103.0
+    box_height = 70.0
     box_width = 400.0
     cx = 944.0
     cy = 889.0
     enabled = false
     output = "HDMI-A-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 
@@ -150,6 +111,7 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
         show_login_button = true
         show_media = true
         show_session_buttons = true
+        show_unlock_hint = true
         show_weather = true
 
 [nightlight]
@@ -167,22 +129,13 @@ wifi = false
 copy_to_clipboard = true
 resolution = "1920x1080"
 
-[plugin_settings."oldirtty/color_picker"]
-hyprpicker-cursor = true
-hyprpicker-lowercase = true
-
 [plugins]
-enabled = [
-    "oldirtty/color_picker",
-    "noctalia/screen_recorder",
-    "noctalia/notes",
-    "8bury/lid-guard",
-    "elijaharch/wl-screen-mirror"
-]
+enabled = [ "noctalia/screen_recorder", "noctalia/notes", "8bury/lid-guard", "alexander/screen-toolkit" ]
 
 [shell]
 app_icon_color = "on_surface"
 app_icon_colorize = true
+avatar_path = "/home/waleed/.face"
 clipboard_enabled = false
 corner_radius_scale = 1.2000000178813934
 font_family = "Inter"
@@ -208,15 +161,19 @@ screen_time_enabled = true
     directory = "/home/waleed/Pictures/Screenshots"
 
 [system.monitor]
-ram_pct_activity_threshold = 80
+cpu_temp_activity_threshold = 70
+cpu_temp_critical_threshold = 90
+cpu_usage_activity_threshold = 60
+ram_pct_activity_threshold = 85
+ram_pct_critical_threshold = 95
 
 [theme]
-builtin = "Catppuccin"
+builtin = "Ayu"
 community_palette = "Catppuccin Mocha Lavender"
 custom_palette = "catppuccin-custom"
 mode = "dark"
 source = "community"
-wallpaper_scheme = "m3-rainbow"
+wallpaper_scheme = "m3-content"
 
     [theme.templates]
     builtin_ids = [ "btop", "gtk3", "gtk4", "kcolorscheme", "niri", "qt", "wezterm" ]
@@ -241,37 +198,47 @@ transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/waleed/Pictures/Wallpapers/catppuccin-mocha/31.jpg"
+    path = "/home/waleed/Pictures/Wallpapers/catppuccin-mocha/031.jpg"
 
     [wallpaper.last]
-    path = "/home/waleed/Pictures/Wallpapers/catppuccin-mocha/31.jpg"
+    path = "/home/waleed/Pictures/Wallpapers/catppuccin-mocha/031.jpg"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/waleed/Pictures/Wallpapers/catppuccin-mocha/31.jpg"
+    path = "/home/waleed/Pictures/Wallpapers/catppuccin-mocha/031.jpg"
+
+    [wallpaper.monitors.Virtual-1]
+    path = "/home/waleed/Pictures/Wallpapers/catppuccin-mocha/031.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/waleed/Pictures/Wallpapers/catppuccin-mocha/31.jpg"
+    path = "/home/waleed/Pictures/Wallpapers/catppuccin-mocha/031.jpg"
 
     [[wallpaper.favorite]]
-    community_palette = "Catppuccin Mocha Lavender"
+    community_palette = "Cherry Blossom"
     palette_source = "community"
-    path = "/home/waleed/Pictures/Wallpapers/catppuccin-mocha/31.jpg"
+    path = "/home/waleed/Pictures/Wallpapers/033.jpg"
     theme_mode = "dark"
 
     [[wallpaper.favorite]]
     community_palette = "Catppuccin Mocha Lavender"
     palette_source = "community"
-    path = "/home/waleed/Pictures/Wallpapers/catppuccin-mocha/29.png"
+    path = "/home/waleed/Pictures/Wallpapers/catppuccin-mocha/031.jpg"
     theme_mode = "dark"
 
     [[wallpaper.favorite]]
-    community_palette = "Creamy Forest"
+    community_palette = "Catppuccin Mocha Lavender"
     palette_source = "community"
-    path = "/home/waleed/Pictures/Wallpapers/32.jpg"
+    path = "/home/waleed/Pictures/Wallpapers/catppuccin-mocha/029.png"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    community_palette = "Peche"
+    palette_source = "community"
+    path = "/home/waleed/Pictures/Wallpapers/034.jpg"
     theme_mode = "dark"
 
 [widget.Wayvibes-Toggle]
 glyph = "keyboard"
+tooltip = "Toggle Wayvibes"
 type = "custom_button"
 
     [widget.Wayvibes-Toggle.actions]
@@ -283,27 +250,22 @@ enabled = false
 max_length = 200
 min_length = 10
 
-[widget.bar]
-show_idle_on_horizontal = false
-type = "noctalia/timer:bar"
+[widget.caffeine]
+color = "on_surface"
 
 [widget.clock]
 anchor = true
 format = "{:%I:%M %p - %a %b %-d}"
 
 [widget.control-center]
-glyph = "linux-archlinux"
+glyph = "navigation-filled"
 
 [widget.lock_keys]
 hide_when_off = true
 
-[widget.mirror]
-color = "on_surface"
-icon_color = "on_surface"
-type = "elijaharch/wl-screen-mirror:mirror"
-
 [widget.network]
 show_label = false
+vpn_status = "both"
 
 [widget.privacy]
 active_color = "on_surface"
@@ -311,15 +273,18 @@ hide_inactive = true
 icon_spacing = 8
 
 [widget.tray]
-hidden = [ "nm-applet", "wayscriber", "motrix-next", "motrix", "vocalinux", "vocalinux-gui" ]
-pinned = [ "kdeconnect" ]
+hidden = [ "nm-applet", "wayscriber", "motrix", "vocalinux", "vocalinux-gui" ]
+pinned = []
 
 [widget.volume]
 mute_color = "on_surface"
 show_label = false
 
+[widget.weather]
+show_condition = false
+
 [widget.workspaces]
-display = "none"
 empty_color = "on_secondary"
 hide_when_empty = true
 occupied_color = "outline"
+show_labels = false
