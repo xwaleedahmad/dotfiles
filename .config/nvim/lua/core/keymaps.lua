@@ -76,7 +76,7 @@ end, { desc = "Toggle Line Wrap" })
 
 -- Copilot
 map("n", "<leader>ul", "<cmd>CopilotToggle<cr>", { desc = "Toggle Copilot (global)" })
-map("n", "<leader>um", "<cmd>MarkdownPreviewToggle<CR>", { desc = "Toggle Markdown Preview" })
+map("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<CR>", { desc = "Toggle Markdown Preview" })
 
 -- Trouble keymaps
 map("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<CR>", {

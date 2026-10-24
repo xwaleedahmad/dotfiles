@@ -4,7 +4,7 @@ order = [ "default" ]
     [bar.default]
     capsule = true
     capsule_thickness = 0.69999998807907104
-    center = [ "clock" ]
+    center = [ "group:g1" ]
     end = [ "tray", "notifications", "volume", "bluetooth", "network", "caffeine", "battery" ]
     font_family = "Inter"
     margin_edge = 4
@@ -12,12 +12,23 @@ order = [ "default" ]
     margin_opposite_edge = 1
     padding = 6
     reserve_space = false
+    show_on_workspace_switch = false
     smart_auto_hide = true
     start = [ "workspaces", "Wayvibes-Toggle", "cpu", "ram", "privacy" ]
     widget_spacing = 4
 
         [bar.default.actions]
         middle = "none"
+
+        [[bar.default.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g1"
+        members = [ "clock" ]
+        opacity = 1.0
+        padding = 6.0
 
 [control_center]
 show_session_button = false
@@ -42,17 +53,29 @@ enabled = false
 schema_version = 2
 widget_order = []
 
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
 [location]
 address = "Sargodha, Pakistan"
 
 [lockscreen]
 blur_intensity = 0.099999997764825821
 fingerprint = false
+monitors = [ "eDP-1" ]
+transition = [ "disc" ]
 
 [lockscreen_widgets]
 enabled = true
 schema_version = 2
-widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
+widget_order = [
+    "lockscreen-login-box@HDMI-A-1",
+    "lockscreen-login-box@eDP-1"
+]
 
     [lockscreen_widgets.grid]
     cell_size = 16
@@ -82,6 +105,7 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
         show_keyboard_layout = false
         show_login_button = false
         show_media = false
+        show_password_reveal = true
         show_session_buttons = true
         show_unlock_hint = false
         show_weather = false
@@ -110,6 +134,7 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
         show_keyboard_layout = true
         show_login_button = true
         show_media = true
+        show_password_reveal = true
         show_session_buttons = true
         show_unlock_hint = true
         show_weather = true
@@ -126,8 +151,14 @@ power_profile = false
 wifi = false
 
 [plugin_settings."noctalia/screen_recorder"]
+audio_codec = "aac"
+audio_source = "none"
 copy_to_clipboard = true
 resolution = "1920x1080"
+
+[plugin_settings."yocraft/custom-shortcut"]
+icon = "keyboard"
+label = "Toggle Wayvibes"
 
 [plugins]
 enabled = [ "noctalia/screen_recorder", "noctalia/notes", "8bury/lid-guard", "alexander/screen-toolkit" ]
@@ -135,12 +166,15 @@ enabled = [ "noctalia/screen_recorder", "noctalia/notes", "8bury/lid-guard", "al
 [shell]
 app_icon_color = "on_surface"
 app_icon_colorize = true
-avatar_path = "/home/waleed/.face"
+avatar_path = "/home/waleed/Pictures/Me/icon.png"
+button_borders = false
+card_borders = false
 clipboard_enabled = false
 corner_radius_scale = 1.2000000178813934
 font_family = "Inter"
 lang = "en"
 polkit_agent = true
+popup_borders = false
 screen_time_enabled = true
 
     [shell.animation]
@@ -158,7 +192,10 @@ screen_time_enabled = true
     wallpaper_position = "center"
 
     [shell.screenshot]
+    confirm_region = true
     directory = "/home/waleed/Pictures/Screenshots"
+    remember_last_region = true
+    show_cursor = true
 
 [system.monitor]
 cpu_temp_activity_threshold = 70
@@ -168,7 +205,7 @@ ram_pct_activity_threshold = 85
 ram_pct_critical_threshold = 95
 
 [theme]
-builtin = "Ayu"
+builtin = "Catppuccin"
 community_palette = "Catppuccin Mocha Lavender"
 custom_palette = "catppuccin-custom"
 mode = "dark"
@@ -176,18 +213,23 @@ source = "community"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
-    builtin_ids = [ "btop", "gtk3", "gtk4", "kcolorscheme", "niri", "qt", "wezterm" ]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "ghostty", "kcolorscheme", "niri", "qt", "wezterm" ]
     community_ids = [
         "antigravity",
+        "claude-code",
         "opencode",
+        "brave",
         "zen-browser",
         "discord",
+        "telegram",
+        "libreoffice",
         "obsidian",
         "vscode",
+        "steam",
         "fuzzel",
         "obs",
-        "papirus-icons",
         "bat",
+        "fzf",
         "lazygit",
         "yazi"
     ]
@@ -225,16 +267,16 @@ transition_on_startup = true
     theme_mode = "dark"
 
     [[wallpaper.favorite]]
-    community_palette = "Catppuccin Mocha Lavender"
-    palette_source = "community"
-    path = "/home/waleed/Pictures/Wallpapers/catppuccin-mocha/029.png"
-    theme_mode = "dark"
-
-    [[wallpaper.favorite]]
     community_palette = "Peche"
     palette_source = "community"
     path = "/home/waleed/Pictures/Wallpapers/034.jpg"
     theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    community_palette = "Creamy Forest"
+    palette_source = "community"
+    path = "/home/waleed/Pictures/Wallpapers/032.jpg"
+    theme_mode = "light"
 
 [widget.Wayvibes-Toggle]
 glyph = "keyboard"
@@ -273,7 +315,8 @@ hide_inactive = true
 icon_spacing = 8
 
 [widget.tray]
-hidden = [ "nm-applet", "wayscriber", "motrix", "vocalinux", "vocalinux-gui" ]
+capsule_padding = 8
+hidden = [ "nm-applet", "motrix", "vocalinux", "vocalinux-gui" ]
 pinned = []
 
 [widget.volume]

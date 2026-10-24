@@ -28,7 +28,6 @@ require("noice").setup({
 
 ---------------------------------------------------------------------------------
 
-local camouflage = require("camouflage")
 require("camouflage").setup({
 	enabled = true,
 	auto_enable = true,
@@ -85,17 +84,6 @@ require("camouflage").setup({
 				},
 			},
 		},
-	},
-})
-
-local json_parser = require("camouflage.parsers.json")
-camouflage.register_parser({
-	name = "jsonc",
-	file_patterns = { "*.jsonc" },
-	priority = 60,
-	parser = json_parser,
-	treesitter = {
-		lang = "json",
 	},
 })
 
