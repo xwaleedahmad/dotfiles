@@ -1,0 +1,208 @@
+[[window_rule]]
+opacity = 0.96
+blur = false
+blur_popups = false
+default_maximize = false
+
+
+[[window_rule]]
+match.app_id = ["^helium", "^brave-*", "firefox", "Loupe", "celluloid"]
+opacity = 1.0
+
+
+[[window_rule]]
+match.app_id = "^steam$"
+match.title = '^notificationtoasts_\d+_desktop$'
+default_floating = true
+default_maximize = false
+default_focused = false
+default_pinned = true
+default_position = { x = 10, y = 10, anchor = "bottom_right" }
+
+
+[[window_rule]]
+match.app_id = ["^helium$", "^brave-origin$", "^brave-browser$", "^brave$"]
+match.title = '^(Picture-in-Picture|Picture in picture)$'
+default_floating = true
+default_maximize = false
+
+
+[[window_rule]]
+match.app_id = "^dev.noctalia.Noctalia$"
+default_maximize = true
+
+[[window_rule]]
+match.app_id = "^dev.noctalia.UmbrielSharePicker$"
+default_floating = true
+default_maximize = false
+
+# ------------------------------------------------------------------------------
+# Scratchpads
+# ------------------------------------------------------------------------------
+
+[[window_rule]]
+match.app_id = "chrome-cinhimbnkkaeohfgghhklpknlkffjgod-Default"
+default_scratchpad = "music"
+default_floating = true
+default_maximize = false
+default_focused = false
+default_floating_size = { width = 0.9, height = 0.9 }
+
+[[window_rule]]
+match.app_id = "chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default"
+default_scratchpad = "whatsapp"
+default_floating = true
+default_maximize = false
+default_focused = false
+default_floating_size = { width = 0.9, height = 0.9 }
+
+[[window_rule]]
+match.app_id = "chrome-fmgjjmmmlfnkbppncabfkddbjimcfncm-Default"
+default_scratchpad = "gmail"
+default_floating = true
+default_maximize = false
+default_focused = false
+default_floating_size = { width = 0.9, height = 0.9 }
+
+# Give scratchpad windows their own border colours.
+[[window_rule]]
+match.is_scratchpad = true
+border_color_focused = "#E5C07BFF"
+border_color_unfocused = "#5C4A2AFF"
+
+# ------------------------------------------------------------------------------
+# Umbriel-only state and content rules
+# ------------------------------------------------------------------------------
+
+# Floating windows get a shadow even though the global shadow is off.
+# [[window_rule]]
+# match.is_floating = true
+# shadow = true
+
+
+[[window_rule]]
+match.content_type = "game"
+tearing = true
+
+# Frame the window currently being screencast; viewers never see the frame.
+[[window_rule]]
+match.is_cast_target = true
+border_width = 5
+border_color_focused = "#40C057FF"
+border_color_unfocused = "#40C057FF"
+
+# ------------------------------------------------------------------------------
+# More Umbriel-only examples, kept commented so they do not change behaviour
+# ------------------------------------------------------------------------------
+
+# Keep game menus inside the game window; a focus or workspace keybind releases
+# the pointer.
+# [[window_rule]]
+# match.app_id = "^steam_app_.*$"
+# confine_pointer = true
+
+# Keep an application rendering while it is hidden on another workspace.
+# [[window_rule]]
+# match.app_id = "^obs$"
+# background_render = true
+
+# Keep compositor shortcuts available while a VM window is focused.
+# [[window_rule]]
+# match.app_id = "^virt-manager$"
+# allow_shortcuts_inhibit = false
+
+# Keep only a close button on dialog title bars.
+# [[window_rule]]
+# match.is_dialog = true
+# title_bar_buttons = ["close"]
+
+# Put related browsers into one named scrolling column.
+# [[window_rule]]
+# match.app_id = "^firefox$"
+# default_scrolling_column = "browsers"
+# default_scrolling_column_order = 10
+#
+# [[window_rule]]
+# match.app_id = "^chromium$"
+# default_scrolling_column = "browsers"
+# default_scrolling_column_order = 20
+
+# Open a window as a tab group.
+# [[window_rule]]
+# match.app_id = "^evince$"
+# default_column_display = "tabbed"
+
+# Give the only tiled window the full column width.
+# [[window_rule]]
+# match.is_alone = true
+# default_maximize = true
+
+# Remove the border when a window is alone on its workspace.
+# [[window_rule]]
+# match.is_only_window = true
+# border_width = 0
+# outer_border_width = 0
+
+# ------------------------------------------------------------------------------
+# Password managers / authentication agents
+#
+# niri: block-out-from "screen-capture". Umbriel's block_capture hides a window
+# from screenshots and recordings in the same way.
+# ------------------------------------------------------------------------------
+[[window_rule]]
+match.app_id = "^polkit-gnome-authentication-agent-1$"
+block_capture = true
+
+# niri's commented examples, kept for reference:
+# [[window_rule]]
+# match.app_id = '^org\.keepassxc\.KeePassXC$'
+# block_capture = true
+#
+# [[window_rule]]
+# match.app_id = '^org\.gnome\.World\.Secrets$'
+# block_capture = true
+
+# ==============================================================================
+# More Umbriel window-rule features (commented examples)
+# ==============================================================================
+
+# Per-window effects. Names come from effects.toml; "off" suppresses a slot.
+# [[window_rule]]
+# match.app_id = "^mpv$"
+# border_effect = "off"
+# window_effect = "scanlines"
+
+# Opening placement and state.
+# [[window_rule]]
+# match.app_id = "^org[.]example[.]Utility$"
+# default_output = "HDMI-A-1"
+# default_workspace = 2
+# default_fullscreen = false
+# default_maximize_to_edges = false
+# default_scrolling_extent = 0.5
+# default_scrolling_extent_px = 900
+# focus_on_activate = false
+# hdr = "auto"
+# outer_border_width = 2
+# corner_radius = 18
+
+# Other match selectors: xdg_tag, is_pinned, is_focused, at_startup.
+# [[window_rule]]
+# match.xdg_tag = "game"
+# match.is_pinned = false
+# match.is_focused = true
+# match.at_startup = false
+
+# ==============================================================================
+# Security context rules (Umbriel-only, commented)
+#
+# Sandboxed Wayland clients are restricted by default. Grant an extra global to
+# one sandboxed application only when a portal cannot provide it.
+# ==============================================================================
+# [[security_context_rule]]
+# match.sandbox_engine = 'org\.flatpak'
+# match.app_id = 'org\.example\.ClipboardManager'
+# allow_globals = [
+#     "ext_data_control_manager_v1",
+#     "zwlr_data_control_manager_v1",
+# ]

@@ -1,0 +1,20 @@
+
+[[scratchpad]]
+name = "explorer"
+spawn_when_empty = "nautilus --class scratchpad-explorer"
+proportional_size = true
+
+[[scratchpad]]
+name = "music"
+spawn_when_empty = "/opt/helium-browser-bin/helium-wrapper --profile-directory=Default --app-id=cinhimbnkkaeohfgghhklpknlkffjgod --class scratchpad-music"
+proportional_size = true
+
+[[scratchpad]]
+name = "whatsapp"
+spawn_when_empty = "/opt/helium-browser-bin/helium-wrapper --profile-directory=Default --app-id=hnpfjngllnobngcgfapefoaidbinmjnm --class scratchpad-whatsapp"
+proportional_size = true
+
+[[scratchpad]]
+name = "gmail"
+spawn_when_empty = "/opt/helium-browser-bin/helium-wrapper --profile-directory=Default --app-id=fmgjjmmmlfnkbppncabfkddbjimcfncm --class scratchpad-gmail"
+proportional_size = true

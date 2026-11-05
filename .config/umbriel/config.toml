@@ -1,0 +1,72 @@
+[general]
+mod_key = "Super"
+show_cheatsheet = false
+xwayland = true
+xwayland_native_resolution = true
+xwayland_xsettings = true
+xwayland_primary_output = "eDP-1"
+nvidia_sync_workaround = true
+focus_on_activate = false
+attach_modal_dialogs = true
+honor_restored_maximize = true
+
+
+autostart = [
+    "noctalia",
+    "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
+    "vicinae server",
+    "/home/waleed/.local/bin/vocalinux",
+    "kdeconnectd",
+    "kdeconnect-indicator",
+]
+
+
+[include]
+files = [
+    "inputs.toml",
+    "outputs.toml",
+    "appearance.toml",
+    "layout.toml",
+    "window-rules.toml",
+    "keybinds.toml",
+    "scratchpads.toml",
+    "animations.toml",
+    "effects.toml",
+]
+
+[include.optional]
+files = ["noctalia.toml"]
+
+
+[environment]
+QT_QPA_PLATFORMTHEME = "qt6ct"
+ELECTRON_OZONE_PLATFORM_HINT = "auto"
+
+
+[events]
+lid_close = "umbriel msg output-disable eDP-1"
+lid_open = "umbriel msg output-enable eDP-1"
+
+
+[screencast]
+disable_dynamic_confirmation = true
+
+
+[drm]
+ignored_devices = []
+ignored_pci_addresses = []
+
+
+[overview]
+zoom = 0.5
+scroll_factor_horizontal = 1.0
+scroll_factor_vertical = 1.0
+background_blur = true
+workspace_wallpaper = true
+shortcuts = false
+shortcut_keys = "1234567890"
+
+
+[workspaces]
+back_and_forth = false
+empty_above = false

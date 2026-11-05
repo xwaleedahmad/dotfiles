@@ -1,0 +1,69 @@
+[input]
+middle_click_paste = false
+client_window_drag = false
+window_drag_toggle = "none"
+mod_right_double_click = "maximize"
+
+
+[input.keyboard]
+# layout = ""
+# variant = ""
+# options = "caps:swapescape"
+# model = ""
+repeat_rate = 25
+repeat_delay = 600
+numlock_toggle = true
+track_layout = "global"
+
+
+[input.touchpad]
+enabled = true
+tap = true
+tap_and_drag = true
+drag_lock = "sticky" # "off", "timeout", or "sticky"
+disable_while_typing = true
+natural_scroll = true
+left_handed = false
+accel_profile = "adaptive"
+sensitivity = 0.0
+scroll_factor = 1.0
+# Per-axis scroll factor:
+# scroll_factor = { horizontal = 2.0, vertical = 1.5 }
+disable_on_external_mouse = false
+scroll_method = "two_finger" # "two_finger", "edge", or "none"
+click_method = "clickfinger" # "button_areas" or "clickfinger"
+tap_button_map = "left_right_middle" # "left_right_middle" or "left_middle_right"
+
+
+[input.mouse]
+natural_scroll = false
+left_handed = false
+# accel_profile = "flat"
+sensitivity = 0.0
+scroll_wheel_step = 60
+# scroll_button = "MouseBack"
+# scroll_button_lock = false
+
+
+[input.cursor]
+theme = "Bibata-Modern-Ice"
+size = 24
+hardware_cursor = true
+follows_focus = false
+hide_when_typing = true
+# Hide after inactivity; 0 disables the timeout.
+hide_timeout_ms = 0
+
+
+[input.focus]
+follows_mouse = false
+follows_mouse_max_scroll = 0.5
+hover_raises = true
+
+
+[input.drag_edge_scroll]
+enabled = true
+trigger_zone = 30
+delay_ms = 100
+max_speed = 1500.0
+

@@ -1,0 +1,38 @@
+[layout]
+mode = "scrolling"
+gap = 4
+extent_presets = [0.33333, 0.5, 0.66667]
+client_maximize = "edges"
+new_exits_fullscreen = []
+
+[layout.scrolling]
+default_extent_fraction = 1.0
+center_focused = "never"
+center_underfull_strip = false
+center_on_overview_select = false
+
+[layout.dwindle]
+preserve_split = false
+new_toward_cursor = false
+
+[layout.master]
+position = "left"
+default_width_fraction = 0.5
+new_on_top = true
+new_becomes_master = false
+
+[layout.stacking]
+drop_zones = true
+
+[layout.tabs]
+default_display = "normal"
+new_tab_position = "end"
+wrap_focus = false
+scroll_switches_tabs = true
+middle_click_closes = true
+
+# [layout.struts]
+# left = 4
+# right = 4
+# top = 3
+# bottom = 4
