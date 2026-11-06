@@ -1,7 +1,11 @@
 
 [[scratchpad]]
-name = "explorer"
-spawn_when_empty = "nautilus --class scratchpad-explorer"
+name = "general"
+proportional_size = true
+
+[[scratchpad]]
+name = "terminal"
+spawn_when_empty = "wezterm start --class scratchpad-terminal --always-new-process"
 proportional_size = true
 
 [[scratchpad]]

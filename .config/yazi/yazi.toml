@@ -1,0 +1,22 @@
+[mgr]
+ratio = [1, 2, 3]
+sort_by = "natural"
+sort_dir_first = true
+# linemode = "size"
+show_symlinks = true
+
+[[mgr.prepend_keymap]]
+on = "<C-n>"
+run = "shell -- dragon-drop -x -i -T %s1"
+desc = "Drag selected file"
+
+[preview]
+wrap = "no"
+
+[opener]
+play = [
+	{ run = "celluloid %s", orphan = true, for = "unix" },
+]
+edit = [
+	{ run = "nvim %s", block = true, for = "unix" },
+]

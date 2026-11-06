@@ -2,7 +2,7 @@
 prefer_no_csd = true
 border_width = 2
 outer_border_width = 0
-corner_radius = 4
+corner_radius = 2
 drag_opacity = 0.75
 opaque_fullscreen = true
 

@@ -5,14 +5,15 @@
 # ------------------------------------------------------------------------------
 "Mod+Space" = { action = "spawn vicinae toggle", repeat = false }
 "Mod+Return" = { action = "spawn wezterm", repeat = false }
-"Mod+E" = { action = "spawn nautilus --new-window", repeat = false }
-"Mod+B" = { action = "spawn helium-browser", repeat = false }
-"Mod+5" = { action = "spawn claude-desktop", repeat = false }
-"Mod+6" = { action = "spawn chatgpt", repeat = false }
+"Mod+E" = { action = "spawn wezterm start -- yazi", repeat = false }
+"Mod+Shift+E" = { action = "spawn nautilus --new-window", repeat = false }
+"Mod+B" = { action = "spawn helium-browser --new-window", repeat = false }
+"Mod+5" = { action = "spawn motrix", repeat = false }
+"Mod+6" = { action = "spawn /opt/helium-browser-bin/helium-wrapper --profile-directory=Default --app-id=agimnkijcaahngcdmfeangaknmldooml", repeat = false }
 "Mod+7" = { action = "spawn brave-origin", repeat = false }
-"Mod+8" = { action = "spawn wezterm start -- nvim", repeat = false }
-"Mod+9" = { action = "spawn obsidian", repeat = false }
-"Mod+0" = { action = "spawn motrix", repeat = false }
+"Mod+8" = { action = "spawn claude-desktop", repeat = false }
+"Mod+9" = { action = "spawn chatgpt", repeat = false }
+"Mod+0" = { action = "spawn wezterm start -- nvim", repeat = false }
 
 # ------------------------------------------------------------------------------
 # Vicinae actions
@@ -49,6 +50,7 @@
 # ------------------------------------------------------------------------------
 "Mod+Ctrl+Alt+Delete" = { action = "dpms-off", repeat = false }
 "Mod+Ctrl+Alt+Slash" = { action = "cheatsheet-toggle", repeat = false }
+"Mod+Ctrl+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
 
 # ------------------------------------------------------------------------------
 # Screencast
@@ -57,6 +59,8 @@
 "Mod+Ctrl+Alt+M" = { action = "screencast-follow-output", repeat = false }
 "Mod+Ctrl+Alt+C" = { action = "screencast-follow-stop", repeat = false }
 "Mod+Ctrl+Alt+P" = { action = "screencast-clear", repeat = false }
+"Mod+Ctrl+Alt+Shift+1" = { action = "screencast-set-output", repeat = false }
+"Mod+Ctrl+Alt+Shift+2" = { action = "screencast-set-window", repeat = false }
 
 # ------------------------------------------------------------------------------
 # Window state and layout
@@ -64,7 +68,6 @@
 "Mod+Shift+Return" = { action = "window-toggle-maximize", repeat = false }
 "Mod+Shift+Backspace" = { action = "window-toggle-fullscreen", repeat = false }
 "Mod+Shift+M" = { action = "window-toggle-maximize-to-edges", repeat = false }
-"Mod+Alt+Return" = { action = "window-set-primary-extent 1.0", repeat = false }
 "Mod+Shift+Space" = { action = "window-set-primary-extent 0.5", repeat = false }
 
 "Mod+D" = { action = "overview-toggle", repeat = false }
@@ -72,7 +75,7 @@
 "Mod+Shift+F" = { action = "window-focus-switch-floating", repeat = false }
 
 "Mod+Ctrl+Return" = { action = "window-close", repeat = false }
-"Mod+Alt+Space" = { action = "column-center", repeat = false }
+# "Mod+Alt+Space" = { action = "column-center", repeat = false }
 "Mod+Ctrl+Space" = { action = "column-toggle-tabbed", repeat = false }
 
 # ------------------------------------------------------------------------------
@@ -179,42 +182,26 @@
 "XF86MonBrightnessDown" = { action = "spawn brightnessctl --class=backlight set 10%-", allow_when_locked = true }
 
 # ------------------------------------------------------------------------------
-#  Inhibition
-# ------------------------------------------------------------------------------
-"Mod+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
-
-# ==============================================================================
-# UMBRIEL-ONLY FEATURES
-# ==============================================================================
-
-# ------------------------------------------------------------------------------
-# Modifier-only launcher (Umbriel-only)
-#
-# Runs on Mod release only when no other key, button, scroll or gesture was used
-# while Mod was held, so it does not interfere with any Mod+... binding.
-# ------------------------------------------------------------------------------
-# "Mod" = { action = "spawn vicinae toggle", repeat = false }
-
-# ------------------------------------------------------------------------------
 # Scratchpads 
 # ------------------------------------------------------------------------------
-# "Mod+Shift+Space" = "window-move-to-scratchpad"
-# "Mod+Space" = "scratchpad-toggle"
-# "Mod+Ctrl+Space" = "window-restore-from-scratchpad"
-# "Mod+Tab" = "scratchpad-focus-next"
+
+"Mod+Alt+Slash" = { action = "scratchpad-toggle general", repeat = false }
+"Mod+Alt+Shift+Period" = "scratchpad-focus-next general"
+"Mod+Alt+Ctrl+Period" = "window-move-to-scratchpad general"
+"Mod+Alt+Ctrl+Comma" = "window-restore-from-scratchpad general"
 
 "Mod+Alt+0" = { action = "scratchpad-toggle music", repeat = false }
 "Mod+Alt+9" = { action = "scratchpad-toggle gmail", repeat = false }
 "Mod+Alt+8" = { action = "scratchpad-toggle whatsapp", repeat = false }
+"Mod+Alt+Return" = { action = "scratchpad-toggle terminal", repeat = false }
 
 # ------------------------------------------------------------------------------
 # Layout modes 
 # ------------------------------------------------------------------------------
-"Mod+Alt+1" = { action = "workspace-set-layout scrolling", repeat = false }
-"Mod+Alt+2" = { action = "workspace-set-layout dwindle", repeat = false }
-"Mod+Alt+3" = { action = "workspace-set-layout master", repeat = false }
-"Mod+Alt+4" = { action = "workspace-set-layout stacking", repeat = false }
-"Mod+Alt+Slash" = { action = "workspace-set-layout toggle scrolling stacking", repeat = false }
+"Mod+1" = { action = "workspace-set-layout scrolling", repeat = false }
+"Mod+2" = { action = "workspace-set-layout dwindle", repeat = false }
+"Mod+3" = { action = "workspace-set-layout stacking", repeat = false }
+"Mod+4" = { action = "workspace-set-layout master", repeat = false }
 
 # Master layout: move windows between the master area and the stack.
 "Mod+Alt+BracketLeft" = { action = "layout-master-count-decrease", repeat = false }
@@ -229,7 +216,6 @@
 
 # ------------------------------------------------------------------------------
 # Stacking drop regions (Umbriel-only)
-#
 # Place a floating stacking window in a half or quarter of the usable area.
 # ------------------------------------------------------------------------------
 "Mod+Alt+Ctrl+Left" = { action = "window-set-region left", repeat = false }
@@ -254,26 +240,12 @@
 "Mod+Alt+Ctrl+B" = { action = "column-show-tab-bar", repeat = false }
 
 # ------------------------------------------------------------------------------
-# Scrolling layout panning and mouse navigation (Umbriel-only)
-# ------------------------------------------------------------------------------
-"Mod+Alt+Comma" = { action = "layout-scroll-left", repeat = true, cooldown_ms = 80 }
-"Mod+Alt+Period" = { action = "layout-scroll-right", repeat = true, cooldown_ms = 80 }
-"Mod+Alt+MouseMiddle" = { action = "layout-scroll-drag", repeat = false }
-
-"Mod+WheelUp" = { action = "window-focus-left", cooldown_ms = 120 }
-"Mod+WheelDown" = { action = "window-focus-right", cooldown_ms = 120 }
-"Mod+Shift+WheelUp" = { action = "column-move-left", cooldown_ms = 120 }
-"Mod+Shift+WheelDown" = { action = "column-move-right", cooldown_ms = 120 }
-"Mod+Alt+WheelUp" = { action = "layout-scroll-left", cooldown_ms = 120 }
-"Mod+Alt+WheelDown" = { action = "layout-scroll-right", cooldown_ms = 120 }
-
-# ------------------------------------------------------------------------------
 # Window management extras (Umbriel-only)
 # ------------------------------------------------------------------------------
-"Mod+Alt+C" = { action = "window-center", repeat = false }
+"Mod+Alt+Space" = { action = "window-center", repeat = false }
 "Mod+Alt+P" = { action = "window-toggle-pinned", repeat = false }
 "Mod+Alt+Minus" = { action = "window-minimize", repeat = false }
-"Mod+Alt+Shift+Minus" = { action = "window-restore-minimized", repeat = false }
+"Mod+Alt+Equal" = { action = "window-restore-minimized", repeat = false }
 "Mod+Alt+D" = { action = "workspace-toggle-show-desktop", repeat = false }
 
 # Swap the focused window with a neighbour without changing tiles.
@@ -305,39 +277,7 @@
 "Mod+Alt+Ctrl+Page_Up" = { action = "window-move-to-output-previous", repeat = false }
 "Mod+Shift+Alt+Ctrl+Page_Down" = { action = "workspace-move-to-output-next", repeat = false }
 "Mod+Shift+Alt+Ctrl+Page_Up" = { action = "workspace-move-to-output-previous", repeat = false }
-"Mod+Ctrl+Alt+Period" = { action = "window-move-to-workspace-next", repeat = false }
-"Mod+Ctrl+Alt+Comma" = { action = "window-move-to-workspace-previous", repeat = false }
 
-# Dynamic screencast target changes (niri's dynamic-cast equivalent).
-"Mod+Ctrl+Alt+Shift+1" = { action = "screencast-set-output", repeat = false }
-"Mod+Ctrl+Alt+Shift+2" = { action = "screencast-set-window", repeat = false }
-"Mod+Ctrl+Alt+Shift+0" = { action = "screencast-clear", repeat = false }
-
-# Dangerous: kill the process owning the focused window without a close request.
-# "Mod+Alt+Shift+Q" = { action = "window-kill", repeat = false }
-
-# ------------------------------------------------------------------------------
-# Effects (Umbriel-only)
-#
-# Pools are defined in effects.toml. Cycle selects the next pool member; toggle
-# temporarily suppresses the slot; reset clears runtime state and re-reads the
-# configuration.
-# ------------------------------------------------------------------------------
-"Mod+Alt+E" = { action = "effect-border-cycle borders", repeat = false }
-"Mod+Alt+Shift+E" = { action = "effect-border-toggle", repeat = false }
-"Mod+Alt+Ctrl+E" = { action = "effect-border-reset", repeat = false }
-
-"Mod+Alt+V" = { action = "effect-window-cycle windows", repeat = false }
-"Mod+Alt+Shift+V" = { action = "effect-window-toggle", repeat = false }
-"Mod+Alt+Ctrl+V" = { action = "effect-window-reset", repeat = false }
-
-"Mod+Alt+Ctrl+S" = { action = "effect-screen-cycle screens", repeat = false }
-"Mod+Alt+Ctrl+Shift+S" = { action = "effect-screen-toggle", repeat = false }
-"Mod+Alt+Ctrl+Shift+E" = { action = "effect-screen-reset", repeat = false }
-
-"Mod+Alt+U" = { action = "effect-cursor-cycle cursors", repeat = false }
-"Mod+Alt+Shift+U" = { action = "effect-cursor-toggle", repeat = false }
-"Mod+Alt+Ctrl+U" = { action = "effect-cursor-reset", repeat = false }
 
 # ------------------------------------------------------------------------------
 # System extras (Umbriel-only)

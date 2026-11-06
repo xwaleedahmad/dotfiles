@@ -30,8 +30,7 @@ files = [
     "window-rules.toml",
     "keybinds.toml",
     "scratchpads.toml",
-    "animations.toml",
-    "effects.toml",
+    # "animations.toml",
 ]
 
 [include.optional]
