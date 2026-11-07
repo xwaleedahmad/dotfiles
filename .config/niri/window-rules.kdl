@@ -24,6 +24,8 @@ window-rule {
 window-rule {
     match app-id="brave-*"
     match app-id="google-chrome"
+    match app-id="zen-*"
+    match app-id="helium-*"
     match app-id="firefox"
     match app-id="Loupe"
     match app-id="celluloid"

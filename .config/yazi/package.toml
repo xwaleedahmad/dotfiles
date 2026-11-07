@@ -1,0 +1,17 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:mount"
+rev = "c0529fc"
+hash = "dbfc342600993eefbb055bff145fa22a"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:toggle-pane"
+rev = "c0529fc"
+hash = "5b2fbef7d1513ce38ff72623a071a5e"
+
+[[plugin.deps]]
+use = "Deepak22903/kdeconnect-send"
+rev = "06674d1"
+hash = "869884767c2ef592bfb7f5764f8fcae3"
+
+[flavor]
+deps = []

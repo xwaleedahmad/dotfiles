@@ -8,7 +8,7 @@ xwayland_primary_output = "eDP-1"
 nvidia_sync_workaround = true
 focus_on_activate = false
 attach_modal_dialogs = true
-honor_restored_maximize = true
+honor_restored_maximize = false
 
 
 autostart = [
@@ -30,7 +30,6 @@ files = [
     "window-rules.toml",
     "keybinds.toml",
     "scratchpads.toml",
-    # "animations.toml",
 ]
 
 [include.optional]

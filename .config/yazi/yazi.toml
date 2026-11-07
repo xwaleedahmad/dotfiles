@@ -1,17 +1,14 @@
 [mgr]
-ratio = [1, 2, 3]
+ratio = [0, 2, 4]
 sort_by = "natural"
 sort_dir_first = true
 # linemode = "size"
 show_symlinks = true
 
-[[mgr.prepend_keymap]]
-on = "<C-n>"
-run = "shell -- dragon-drop -x -i -T %s1"
-desc = "Drag selected file"
-
 [preview]
 wrap = "no"
+max_width = 1400
+max_height = 1400
 
 [opener]
 play = [

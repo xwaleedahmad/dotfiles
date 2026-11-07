@@ -1,8 +1,9 @@
 [keybinds]
 
 # ------------------------------------------------------------------------------
-# Launch Applications
+# Applications
 # ------------------------------------------------------------------------------
+
 "Mod+Space" = { action = "spawn vicinae toggle", repeat = false }
 "Mod+Return" = { action = "spawn wezterm", repeat = false }
 "Mod+E" = { action = "spawn wezterm start -- yazi", repeat = false }
@@ -16,25 +17,30 @@
 "Mod+0" = { action = "spawn wezterm start -- nvim", repeat = false }
 
 # ------------------------------------------------------------------------------
-# Vicinae actions
+# Vicinae
 # ------------------------------------------------------------------------------
+
 "Mod+Ctrl+V" = { action = "spawn vicinae vicinae://launch/clipboard/history", repeat = false }
 "Mod+Ctrl+E" = { action = "spawn vicinae vicinae://launch/core/search-emojis", repeat = false }
 
 # ------------------------------------------------------------------------------
-# Noctalia actions
+# Noctalia
 # ------------------------------------------------------------------------------
-# Built-in
+
+# Screenshot
 "Print" = { action = "spawn noctalia msg screenshot-region", repeat = false }
 "Alt+Print" = { action = "spawn noctalia msg screenshot-fullscreen", repeat = false }
 "Ctrl+Print" = { action = "spawn noctalia msg screenshot-window", repeat = false }
 "Mod+Ctrl+X" = { action = "spawn noctalia msg screenshot-annotate", repeat = false }
 "Ctrl+Alt+Print" = { action = "spawn noctalia msg screenshot-fullscreen all", repeat = false }
+
+# Shell
 "Mod+Comma" = { action = "spawn noctalia msg settings-toggle", repeat = false }
 "Mod+S" = { action = "spawn noctalia msg panel-toggle control-center", repeat = false }
 "Mod+Ctrl+B" = { action = "spawn noctalia msg bar-show", repeat = false }
 "Mod+Ctrl+Alt+R" = { action = "spawn noctalia msg config-reload", repeat = false }
 "Mod+Ctrl+Delete" = { action = "spawn noctalia msg panel-toggle session", repeat = false }
+
 # Plugins
 "Mod+Ctrl+N" = { action = "spawn noctalia msg panel-toggle control-center notifications", repeat = false }
 "Mod+Ctrl+U" = { action = "spawn noctalia msg panel-toggle noctalia/notes:panel", repeat = false }
@@ -46,256 +52,196 @@
 "Mod+Ctrl+Y" = { action = "spawn noctalia msg plugin alexander/screen-toolkit:service all lens", repeat = false }
 
 # ------------------------------------------------------------------------------
-# Session and compositor
+# Scratchpads
 # ------------------------------------------------------------------------------
+
+"Mod+Alt+Return" = { action = "scratchpad-toggle general", repeat = false }
+"Mod+Alt+Shift+Return" = "scratchpad-focus-next general"
+"Mod+Ctrl+Alt+Return" = "window-toggle-scratchpad general"
+
+"Mod+Alt+T" = { action = "scratchpad-toggle terminal", repeat = false }
+"Mod+Alt+N" = { action = "scratchpad-toggle notes", repeat = false }
+"Mod+Alt+0" = { action = "scratchpad-toggle music", repeat = false }
+"Mod+Alt+9" = { action = "scratchpad-toggle gmail", repeat = false }
+"Mod+Alt+8" = { action = "scratchpad-toggle whatsapp", repeat = false }
+
+# ------------------------------------------------------------------------------
+# General
+# ------------------------------------------------------------------------------
+
+# System
 "Mod+Ctrl+Alt+Delete" = { action = "dpms-off", repeat = false }
 "Mod+Ctrl+Alt+Slash" = { action = "cheatsheet-toggle", repeat = false }
-"Mod+Ctrl+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
+"Mod+Alt+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
+"Mod+Ctrl+Alt+Shift+R" = { action = "config-reload", repeat = false }
+
+"Mod+D" = { action = "overview-toggle", repeat = false }
+"Mod+Alt+D" = { action = "workspace-toggle-show-desktop", repeat = false }
+
+"Mod+Ctrl+Return" = { action = "window-close", repeat = false }
+"Mod+Escape" = { action = "window-kill", repeat = false }
+
+"Mod+P" = { action = "window-toggle-pinned", repeat = false }
+"Mod+F" = { action = "window-toggle-floating", repeat = false }
+"Mod+Alt+F" = { action = "window-focus-switch-floating", repeat = false }
+
+"Mod+Alt+Minus" = { action = "window-minimize", repeat = false }
+"Mod+Alt+Equal" = { action = "window-restore-minimized", repeat = false }
+# "Mod+Alt+Space" = { action = "column-center", repeat = false }
 
 # ------------------------------------------------------------------------------
 # Screencast
 # ------------------------------------------------------------------------------
-"Mod+Ctrl+Alt+W" = { action = "screencast-follow-window", repeat = false }
-"Mod+Ctrl+Alt+M" = { action = "screencast-follow-output", repeat = false }
-"Mod+Ctrl+Alt+C" = { action = "screencast-follow-stop", repeat = false }
-"Mod+Ctrl+Alt+P" = { action = "screencast-clear", repeat = false }
-"Mod+Ctrl+Alt+Shift+1" = { action = "screencast-set-output", repeat = false }
-"Mod+Ctrl+Alt+Shift+2" = { action = "screencast-set-window", repeat = false }
+
+"Mod+Ctrl+Alt+W" = { action = "screencast-set-window", repeat = false }
+"Mod+Ctrl+Alt+M" = { action = "screencast-set-output", repeat = false }
+"Mod+Ctrl+Alt+C" = { action = "screencast-clear", repeat = false }
+"Mod+Ctrl+Alt+Shift+M" = { action = "screencast-follow-output", repeat = false }
+"Mod+Ctrl+Alt+Shift+W" = { action = "screencast-follow-window", repeat = false }
+"Mod+Ctrl+Alt+Shift+F" = { action = "screencast-follow-stop", repeat = false }
 
 # ------------------------------------------------------------------------------
-# Window state and layout
+# Focus
 # ------------------------------------------------------------------------------
-"Mod+Shift+Return" = { action = "window-toggle-maximize", repeat = false }
-"Mod+Shift+Backspace" = { action = "window-toggle-fullscreen", repeat = false }
-"Mod+Shift+M" = { action = "window-toggle-maximize-to-edges", repeat = false }
-"Mod+Shift+Space" = { action = "window-set-primary-extent 0.5", repeat = false }
 
-"Mod+D" = { action = "overview-toggle", repeat = false }
-"Mod+F" = { action = "window-toggle-floating", repeat = false }
-"Mod+Shift+F" = { action = "window-focus-switch-floating", repeat = false }
-
-"Mod+Ctrl+Return" = { action = "window-close", repeat = false }
-# "Mod+Alt+Space" = { action = "column-center", repeat = false }
-"Mod+Ctrl+Space" = { action = "column-toggle-tabbed", repeat = false }
-
-# ------------------------------------------------------------------------------
-# Focus between columns and rows
-# ------------------------------------------------------------------------------
+# Change focus between columns and windows
 "Mod+H" = "window-focus-left"
 "Mod+J" = "window-focus-down"
 "Mod+K" = "window-focus-up"
 "Mod+L" = "window-focus-right"
+
+# Change focus between the first and last column
 "Mod+I" = "column-focus-first"
 "Mod+O" = "column-focus-last"
 
-# ------------------------------------------------------------------------------
-# Move columns and rows
-# ------------------------------------------------------------------------------
-"Mod+Ctrl+H" = "column-move-left"
-"Mod+Ctrl+J" = "window-move-down"
-"Mod+Ctrl+K" = "window-move-up"
-"Mod+Ctrl+L" = "column-move-right"
-"Mod+Ctrl+I" = "column-move-to-first"
-"Mod+Ctrl+O" = "column-move-to-last"
-
-# ------------------------------------------------------------------------------
-# Focus between monitors
-# ------------------------------------------------------------------------------
+# Change the focus between outputs
 "Mod+Alt+H" = "output-focus-left"
 "Mod+Alt+J" = "output-focus-down"
 "Mod+Alt+K" = "output-focus-up"
 "Mod+Alt+L" = "output-focus-right"
 
-# ------------------------------------------------------------------------------
-# Move column to another monitor
-# ------------------------------------------------------------------------------
-"Mod+Alt+Ctrl+H" = { action = "column-move-to-output-left", repeat = false }
-"Mod+Alt+Ctrl+J" = { action = "column-move-to-output-down", repeat = false }
-"Mod+Alt+Ctrl+K" = { action = "column-move-to-output-up", repeat = false }
-"Mod+Alt+Ctrl+L" = { action = "column-move-to-output-right", repeat = false }
-
-# ------------------------------------------------------------------------------
-# Move whole workspace to another monitor
-# ------------------------------------------------------------------------------
-"Mod+Shift+Alt+Ctrl+H" = { action = "workspace-move-to-output-left", repeat = false }
-"Mod+Shift+Alt+Ctrl+J" = { action = "workspace-move-to-output-down", repeat = false }
-"Mod+Shift+Alt+Ctrl+K" = { action = "workspace-move-to-output-up", repeat = false }
-"Mod+Shift+Alt+Ctrl+L" = { action = "workspace-move-to-output-right", repeat = false }
-
-# ------------------------------------------------------------------------------
-# Focus between workspaces
-# ------------------------------------------------------------------------------
+# Change the focus between worksapces
 "Mod+Alt+I" = "workspace-next"
 "Mod+Alt+O" = "workspace-previous"
 
-# ------------------------------------------------------------------------------
-# Move column between workspaces
-# ------------------------------------------------------------------------------
-"Mod+Alt+Ctrl+I" = { action = "column-move-to-workspace-next", repeat = false }
-"Mod+Alt+Ctrl+O" = { action = "column-move-to-workspace-previous", repeat = false }
+# Change the focus between windows in a worksapce
+"Mod+Tab" = { action = "window-focus-next", repeat = false }
+"Mod+Shift+Tab" = { action = "window-focus-previous", repeat = false }
 
 # ------------------------------------------------------------------------------
-# Move whole workspace up/down the workspace list
+# Move
 # ------------------------------------------------------------------------------
-"Mod+Shift+Alt+Ctrl+I" = { action = "workspace-move-down", repeat = false }
-"Mod+Shift+Alt+Ctrl+O" = { action = "workspace-move-up", repeat = false }
 
-# ------------------------------------------------------------------------------
-# Cycle width/height presets
-# ------------------------------------------------------------------------------
-"Mod+Slash" = { action = "window-cycle-primary-extent", repeat = false }
-"Mod+Shift+Slash" = { action = "window-cycle-secondary-extent", repeat = false }
+# Move focused column/window to the center of the screen
+"Mod+Alt+Space" = { action = "window-center", repeat = false }
+"Mod+Alt+Shift+Space" = { action = "column-center", repeat = false }
 
-# ------------------------------------------------------------------------------
-# Consume or expel a window from a column
-# ------------------------------------------------------------------------------
+# Move the focused column/window to a specific direction
+"Mod+Ctrl+H" = "column-move-left"
+"Mod+Ctrl+J" = "window-move-down"
+"Mod+Ctrl+K" = "window-move-up"
+"Mod+Ctrl+L" = "column-move-right"
+
+# Move the column to the first or last position in the current workspace
+"Mod+Ctrl+I" = "column-move-to-first"
+"Mod+Ctrl+O" = "column-move-to-last"
+
+# Move the column to the next or previous workspace
+"Mod+Ctrl+Alt+I" = { action = "column-move-to-workspace-next", repeat = false }
+"Mod+Ctrl+Alt+O" = { action = "column-move-to-workspace-previous", repeat = false }
+
+# Move the column to a specific output
+"Mod+Ctrl+Alt+H" = { action = "column-move-to-output-left", repeat = false }
+"Mod+Ctrl+Alt+J" = { action = "column-move-to-output-down", repeat = false }
+"Mod+Ctrl+Alt+K" = { action = "column-move-to-output-up", repeat = false }
+"Mod+Ctrl+Alt+L" = { action = "column-move-to-output-right", repeat = false }
+
+# Move the whole workspace to a specific output
+"Mod+Ctrl+Alt+Shift+H" = { action = "workspace-move-to-output-left", repeat = false }
+"Mod+Ctrl+Alt+Shift+J" = { action = "workspace-move-to-output-down", repeat = false }
+"Mod+Ctrl+Alt+Shift+K" = { action = "workspace-move-to-output-up", repeat = false }
+"Mod+Ctrl+Alt+Shift+L" = { action = "workspace-move-to-output-right", repeat = false }
+
+# Move the whole workspace up and down in the current output
+"Mod+Ctrl+Alt+Shift+I" = { action = "workspace-move-down", repeat = false }
+"Mod+Ctrl+Alt+Shift+O" = { action = "workspace-move-up", repeat = false }
+
+# Move the focused window to a specific direction in the current column
 "Mod+SemiColon" = { action = "window-consume-or-expel-left", repeat = false }
 "Mod+Apostrophe" = { action = "window-consume-or-expel-right", repeat = false }
 
+# Move floating windows to a specific direction on the screen
+"Mod+Ctrl+Shift+H" = { action = "window-move-left", repeat = false }
+"Mod+Ctrl+Shift+J" = { action = "window-move-down", repeat = false }
+"Mod+Ctrl+Shift+L" = { action = "window-move-right", repeat = false }
+"Mod+Ctrl+Shift+K" = { action = "window-move-up", repeat = false }
+
+# Move floating windows by a fixed amount of pixels in a direction
+"Mod+Alt+Shift+H"  = { action = "window-move-by -10 0", repeat = true }
+"Mod+Alt+Shift+J"  = { action = "window-move-by 0 10",  repeat = true }
+"Mod+Alt+Shift+K"    = { action = "window-move-by 0 -10", repeat = true }
+"Mod+Alt+Shift+L" = { action = "window-move-by 10 0",  repeat = true }
+
+# Move floating windows to a specific region of the screen
+"Mod+Alt+Shift+1" = { action = "window-set-region top_left", repeat = false }
+"Mod+Alt+Shift+2" = { action = "window-set-region top_right", repeat = false }
+"Mod+Alt+Shift+3" = { action = "window-set-region bottom_left", repeat = false }
+"Mod+Alt+Shift+4" = { action = "window-set-region bottom_right", repeat = false }
+
 # ------------------------------------------------------------------------------
-# Fine width/height adjustments
+# Resize
 # ------------------------------------------------------------------------------
+
+"Mod+Shift+Backspace" = { action = "window-toggle-fullscreen", repeat = false }
+"Mod+Shift+M" = { action = "window-toggle-maximize-to-edges", repeat = false }
+"Mod+Shift+Return" = { action = "window-toggle-maximize", repeat = false }
+"Mod+Shift+Space" = { action = "window-set-primary-extent 0.5", repeat = false }
+
+# Cycle vertial and horziontal extents
+"Mod+Slash" = { action = "window-cycle-primary-extent", repeat = false }
+"Mod+Shift+Slash" = { action = "window-cycle-secondary-extent", repeat = false }
+
+# Precisely resize windows
 "Mod+Shift+H" = "window-modify-primary-extent -0.1"
 "Mod+Shift+L" = "window-modify-primary-extent +0.1"
 "Mod+Shift+J" = "window-modify-secondary-extent -0.1"
 "Mod+Shift+K" = "window-modify-secondary-extent +0.1"
 
 # ------------------------------------------------------------------------------
-# Volume keys (PipeWire / WirePlumber)
-# ------------------------------------------------------------------------------
-"XF86AudioRaiseVolume" = { action = "spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0", allow_when_locked = true }
-"XF86AudioLowerVolume" = { action = "spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-", allow_when_locked = true }
-"XF86AudioMute" = { action = "spawn wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle", allow_when_locked = true, repeat = false }
-"XF86AudioMicMute" = { action = "spawn wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle", allow_when_locked = true, repeat = false }
-
-# ------------------------------------------------------------------------------
-# Media keys (MPRIS via playerctl)
-# ------------------------------------------------------------------------------
-"Mod+Ctrl+P" = { action = "spawn playerctl play-pause", allow_when_locked = true, repeat = false }
-"Mod+Ctrl+Comma" = { action = "spawn playerctl previous", allow_when_locked = true, repeat = false }
-"Mod+Ctrl+Period" = { action = "spawn playerctl next", allow_when_locked = true, repeat = false }
-
-# ------------------------------------------------------------------------------
-# Brightness keys
-# ------------------------------------------------------------------------------
-"XF86MonBrightnessUp" = { action = "spawn brightnessctl --class=backlight set +10%", allow_when_locked = true }
-"XF86MonBrightnessDown" = { action = "spawn brightnessctl --class=backlight set 10%-", allow_when_locked = true }
-
-# ------------------------------------------------------------------------------
-# Scratchpads 
+# Layouts
 # ------------------------------------------------------------------------------
 
-"Mod+Alt+Slash" = { action = "scratchpad-toggle general", repeat = false }
-"Mod+Alt+Shift+Period" = "scratchpad-focus-next general"
-"Mod+Alt+Ctrl+Period" = "window-move-to-scratchpad general"
-"Mod+Alt+Ctrl+Comma" = "window-restore-from-scratchpad general"
-
-"Mod+Alt+0" = { action = "scratchpad-toggle music", repeat = false }
-"Mod+Alt+9" = { action = "scratchpad-toggle gmail", repeat = false }
-"Mod+Alt+8" = { action = "scratchpad-toggle whatsapp", repeat = false }
-"Mod+Alt+Return" = { action = "scratchpad-toggle terminal", repeat = false }
-
-# ------------------------------------------------------------------------------
-# Layout modes 
-# ------------------------------------------------------------------------------
 "Mod+1" = { action = "workspace-set-layout scrolling", repeat = false }
 "Mod+2" = { action = "workspace-set-layout dwindle", repeat = false }
 "Mod+3" = { action = "workspace-set-layout stacking", repeat = false }
 "Mod+4" = { action = "workspace-set-layout master", repeat = false }
 
-# Master layout: move windows between the master area and the stack.
-"Mod+Alt+BracketLeft" = { action = "layout-master-count-decrease", repeat = false }
-"Mod+Alt+BracketRight" = { action = "layout-master-count-increase", repeat = false }
-
-# Dwindle layout: flip the focused tile's split direction.
+# Switch between horizontal and vertical split layouts (dwindle and master only)
 "Mod+Alt+Backslash" = { action = "layout-toggle-split", repeat = false }
 
-# Reverse extent-preset cycling.
-"Mod+Ctrl+Slash" = { action = "window-cycle-primary-extent-back", repeat = false }
-"Mod+Ctrl+Shift+Slash" = { action = "window-cycle-secondary-extent-back", repeat = false }
+# ------------------------------------------------------------------------------
+# Tab groups
+# ------------------------------------------------------------------------------
 
-# ------------------------------------------------------------------------------
-# Stacking drop regions (Umbriel-only)
-# Place a floating stacking window in a half or quarter of the usable area.
-# ------------------------------------------------------------------------------
-"Mod+Alt+Ctrl+Left" = { action = "window-set-region left", repeat = false }
-"Mod+Alt+Ctrl+Right" = { action = "window-set-region right", repeat = false }
-"Mod+Alt+Ctrl+Up" = { action = "window-set-region top", repeat = false }
-"Mod+Alt+Ctrl+Down" = { action = "window-set-region bottom", repeat = false }
-"Mod+Alt+Ctrl+1" = { action = "window-set-region top_left", repeat = false }
-"Mod+Alt+Ctrl+2" = { action = "window-set-region top_right", repeat = false }
-"Mod+Alt+Ctrl+3" = { action = "window-set-region bottom_left", repeat = false }
-"Mod+Alt+Ctrl+4" = { action = "window-set-region bottom_right", repeat = false }
-"Mod+Alt+Ctrl+0" = { action = "window-clear-region", repeat = false }
-
-# ------------------------------------------------------------------------------
-# Tab groups (Umbriel-only beyond toggle-column-tabbed-display)
-# ------------------------------------------------------------------------------
-"Mod+Alt+Page_Down" = { action = "column-focus-tab-next", repeat = false }
-"Mod+Alt+Page_Up" = { action = "column-focus-tab-previous", repeat = false }
-"Mod+Alt+Shift+Page_Down" = { action = "column-move-tab-next", repeat = false }
-"Mod+Alt+Shift+Page_Up" = { action = "column-move-tab-previous", repeat = false }
+"Mod+Ctrl+Space" = { action = "column-toggle-tabbed", repeat = false }
 "Mod+Alt+B" = { action = "column-toggle-tab-bar", repeat = false }
-"Mod+Alt+Shift+B" = { action = "column-hide-tab-bar", repeat = false }
-"Mod+Alt+Ctrl+B" = { action = "column-show-tab-bar", repeat = false }
+
+"Mod+Alt+Shift+O" = { action = "column-focus-tab-next", repeat = false }
+"Mod+Alt+Shift+I" = { action = "column-focus-tab-previous", repeat = false }
 
 # ------------------------------------------------------------------------------
-# Window management extras (Umbriel-only)
+# Volume, Brightness, and Media
 # ------------------------------------------------------------------------------
-"Mod+Alt+Space" = { action = "window-center", repeat = false }
-"Mod+Alt+P" = { action = "window-toggle-pinned", repeat = false }
-"Mod+Alt+Minus" = { action = "window-minimize", repeat = false }
-"Mod+Alt+Equal" = { action = "window-restore-minimized", repeat = false }
-"Mod+Alt+D" = { action = "workspace-toggle-show-desktop", repeat = false }
 
-# Swap the focused window with a neighbour without changing tiles.
-"Mod+Alt+Shift+H" = { action = "window-swap-left", repeat = false }
-"Mod+Alt+Shift+J" = { action = "window-swap-down", repeat = false }
-"Mod+Alt+Shift+K" = { action = "window-swap-up", repeat = false }
-"Mod+Alt+Shift+L" = { action = "window-swap-right", repeat = false }
-"Mod+Alt+Shift+I" = { action = "window-swap-previous", repeat = false }
-"Mod+Alt+Shift+O" = { action = "window-swap-next", repeat = false }
+"XF86AudioRaiseVolume" = { action = "spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0", allow_when_locked = true }
+"XF86AudioLowerVolume" = { action = "spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-", allow_when_locked = true }
+"XF86AudioMute" = { action = "spawn wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle", allow_when_locked = true, repeat = false }
+"XF86AudioMicMute" = { action = "spawn wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle", allow_when_locked = true, repeat = false }
 
-# Focus cycling and history.
-"Mod+Tab" = { action = "window-focus-next", repeat = false }
-"Mod+Shift+Tab" = { action = "window-focus-previous", repeat = false }
-"Mod+Grave" = { action = "window-focus-last", repeat = false }
-"Mod+Alt+Grave" = { action = "workspace-focus-last", repeat = false }
+"XF86MonBrightnessUp" = { action = "spawn brightnessctl --class=backlight set +10%", allow_when_locked = true }
+"XF86MonBrightnessDown" = { action = "spawn brightnessctl --class=backlight set 10%-", allow_when_locked = true }
 
-# Stack the focused window into the column left/right.
-"Mod+Ctrl+Shift+H" = { action = "window-consume-left", repeat = false }
-"Mod+Ctrl+Shift+L" = { action = "window-consume-right", repeat = false }
+"Mod+Ctrl+P" = { action = "spawn playerctl play-pause", allow_when_locked = true, repeat = false }
+"Mod+Ctrl+Comma" = { action = "spawn playerctl previous", allow_when_locked = true, repeat = false }
+"Mod+Ctrl+Period" = { action = "spawn playerctl next", allow_when_locked = true, repeat = false }
 
-# Pull a window from the neighbouring column instead of moving the focus.
-"Mod+Ctrl+SemiColon" = { action = "window-consume-from-left", repeat = false }
-"Mod+Ctrl+Apostrophe" = { action = "window-consume-from-right", repeat = false }
-
-# Move/focus across outputs and workspaces by order, not direction.
-"Mod+Alt+Ctrl+Tab" = { action = "output-focus-next", repeat = false }
-"Mod+Alt+Ctrl+Shift+Tab" = { action = "output-focus-previous", repeat = false }
-"Mod+Alt+Ctrl+Page_Down" = { action = "window-move-to-output-next", repeat = false }
-"Mod+Alt+Ctrl+Page_Up" = { action = "window-move-to-output-previous", repeat = false }
-"Mod+Shift+Alt+Ctrl+Page_Down" = { action = "workspace-move-to-output-next", repeat = false }
-"Mod+Shift+Alt+Ctrl+Page_Up" = { action = "workspace-move-to-output-previous", repeat = false }
-
-
-# ------------------------------------------------------------------------------
-# System extras (Umbriel-only)
-# ------------------------------------------------------------------------------
-"Mod+Ctrl+Alt+Shift+P" = { action = "dpms-on", repeat = false }
-"Mod+Ctrl+Alt+Space" = { action = "keyboard-layout-next", repeat = false }
-"Mod+Alt+Ctrl+Shift+R" = { action = "config-reload", repeat = false }
-"Mod+Alt+Shift+C" = { action = "cursor-show", repeat = false }
-"Mod+Alt+Shift+X" = { action = "cursor-hide", repeat = false }
-
-# ------------------------------------------------------------------------------
-# Submap example (Umbriel-only)
-#
-# Mod+Alt+Ctrl+Grave enters a temporary "system" layer. Escape leaves it; R, Q
-# and C run one command and return to the default layer.
-# ------------------------------------------------------------------------------
-"Mod+Alt+Ctrl+Grave" = { action = "submap system", repeat = false }
-"submap[system],Escape" = { action = "submap reset", repeat = false }
-"submap[system],R" = { action = "config-reload", submap = "reset", repeat = false }
-"submap[system],Q" = { action = "session-quit skip-confirmation", submap = "reset", repeat = false }
-"submap[system],C" = { action = "cheatsheet-toggle", submap = "reset", repeat = false }

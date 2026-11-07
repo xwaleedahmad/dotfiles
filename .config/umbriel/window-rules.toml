@@ -6,6 +6,7 @@ opacity = 0.95
 blur = false
 blur_popups = false
 default_maximize = false
+default_position = { x = 0, y = 0, anchor = "center" }
 default_floating_size = { width = 0.7, height = 0.7 }
 
 [[window_rule]]
@@ -48,6 +49,12 @@ match.title = '^(Picture-in-Picture|Picture in picture)$'
 default_floating = true
 default_maximize = false
 
+[[window_rule]]
+match.app_id = "it.catboy.ripdrag"
+match.title = "it.catboy.ripdrag"
+default_floating = true
+default_floating_size = { width = 0.1, height = 0.1 }
+
 # ------------------------------------------------------------------------------
 # Noctalia
 # ------------------------------------------------------------------------------
@@ -70,6 +77,14 @@ default_floating = true
 default_maximize = false
 default_focused = true
 default_floating_size = { width = 0.7, height = 0.7 }
+
+[[window_rule]]
+match.app_id = "obsidian"
+default_scratchpad = "notes"
+default_floating = true
+default_maximize = false
+default_focused = true
+default_floating_size = { width = 0.9, height = 0.9 }
 
 [[window_rule]]
 match.app_id = "chrome-cinhimbnkkaeohfgghhklpknlkffjgod-Default"

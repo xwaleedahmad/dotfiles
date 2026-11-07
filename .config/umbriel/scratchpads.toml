@@ -9,6 +9,11 @@ spawn_when_empty = "wezterm start --class scratchpad-terminal --always-new-proce
 proportional_size = true
 
 [[scratchpad]]
+name = "notes"
+spawn_when_empty = "obsidian --class scratchpad-notes"
+proportional_size = true
+
+[[scratchpad]]
 name = "music"
 spawn_when_empty = "/opt/helium-browser-bin/helium-wrapper --profile-directory=Default --app-id=cinhimbnkkaeohfgghhklpknlkffjgod --class scratchpad-music"
 proportional_size = true
