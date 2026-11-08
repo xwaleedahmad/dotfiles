@@ -1,11 +1,11 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "source": "arch",
-    "type": "small",
+    "source": "~/.config/fastfetch/logos/arch.txt",
+    "type": "file",
     "color": {
-      "1": "38;2;180;190;254", // #B4BEFE
-      "2": "38;2;180;190;254" // #B4BEFE
+      "1": "#b4befe",
+      "2": "#b4befe"
     },
     "padding": {
       "left": 4,
@@ -13,87 +13,42 @@
     }
   },
   "display": {
-    "separator": " ",
+    "separator": "  ",
     "color": {
-      "keys": "38;2;180;190;254", // #B4BEFE
-      "title": "38;2;180;190;254" // #B4BEFE
+      "keys": "#b4befe",
+      "title": "#b4befe"
     }
   },
   "modules": [
     {
       "type": "os",
-      "key": "╭─{icon} OS"
-    },
-    {
-      "type": "wm",
-      "key": "├─ WM"
-    },
-    {
-      "type": "de",
-      "key": "├─ DE"
-    },
-    {
-      "type": "lm",
-      "key": "├─󰧨 LM"
-    },
-    {
-      "type": "shell",
-      "key": "├─ Shell"
-    },
-    {
-      "type": "terminal",
-      "key": "├─ Terminal",
+      "key": "{icon} OS",
       "format": "{pretty-name}"
     },
     {
-      "type": "kernel",
-      "key": "├─ Kernel"
+      "type": "terminal",
+      "key": " TM",
+      "format": "{pretty-name}"
     },
     {
-      "type": "uptime",
-      "key": "└─󰅐 Start Time"
+      "type": "wm",
+      "key": " WM",
+      "format": "{pretty-name}"
     },
-    // {
-    //   "type": "terminalfont",
-    //   "key": "├─ Font"
-    // },
-    // {
-    //   "type": "theme",
-    //   "key": "├─󰉼 Themes"
-    // },
-    // {
-    //   "type": "icons",
-    //   "key": "└─󰀻 Icons"
-    // },
-    // "break",
-    // {
-    //   "type": "host",
-    //   "key": "╭─󰌢 PC"
-    // },
-    // {
-    //   "type": "display",
-    //   "key": "├─󰍹 Display(s)"
-    // },
-    // {
-    //   "type": "memory",
-    //   "key": "├─󰑭 RAM"
-    // },
-    // {
-    //   "type": "swap",
-    //   "key": "├─󰓡 Zram"
-    // },
-    // {
-    //   "type": "disk",
-    //   "key": "├─ Disk",
-    //   "format": "{size-used} / {size-total} ({size-percentage}) - {filesystem} {mountpoint}"
-    // },
-    // {
-    //   "type": "cpu",
-    //   "key": "├─󰻠 CPU"
-    // },
-    // {
-    //   "type": "gpu",
-    //   "key": "└─󰍛 GPU"
-    // }
+    {
+      "type": "lm",
+      "key": "󰧨 LM",
+      "format": "{pretty-name}"
+    },
+    {
+      "type": "shell",
+      "key": " SH",
+      "format": "{pretty-name}"
+    },
+    {
+      "type": "colors",
+      "symbol": "circle",
+      "brightness": "normal"
+    }
   ]
 }
