@@ -1,12 +1,12 @@
 "$schema" = 'https://starship.rs/config-schema.json'
-palette = 'catppuccin'
+palette = "catppuccin"
 
 format = """
 [╭─](bold lavender)[](lavender)\
 $os\
-[](bold fg:lavender)[](bold bg:lavender fg:transparent)\
+[](bold fg:lavender)\
 $username\
-[](bold fg:lavender)[](bold bg:lavender fg:transparent)\
+[](bold fg:lavender)\
 $directory\
 [](bold fg:lavender)\
 $git_branch $git_status\
@@ -98,4 +98,4 @@ peach = '#fab387'
 mauve = '#cba6f7'
 flamingo = '#f2cdcd'
 sapphire = '#74c7ec'
-transparent = '#1F1F2F'
+

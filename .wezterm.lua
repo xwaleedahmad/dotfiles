@@ -5,11 +5,6 @@ config.font_size = 14
 config.font = wezterm.font("FiraCode Nerd Font Mono")
 config.color_scheme = "Noctalia"
 
-config.colors = {
-	cursor_bg = "#B4BEFE",
-	cursor_border = "#B4BEFE",
-}
-
 config.window_decorations = "NONE"
 config.enable_tab_bar = false
 config.underline_thickness = "2px"

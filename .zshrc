@@ -28,16 +28,28 @@ fi
 alias ff='fastfetch'
 alias ll='ls -lh --color=auto'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' # dotfiles config --local status.showUntrackedFiles no
+alias b2=/home/waleed/Apps/b2-linux
 
+# use phone as a webcam
 phonecam() {
   sudo modprobe v4l2loopback exclusive_caps=1 card_label="Android Phone" video_nr=5 &&
     scrcpy --video-source=camera \
       --camera-size=1921x1080 \
       --capture-orientation=0 \
       --camera-id=0 \
-      --camera-zoom=1.0 \
+      --camera-zoom=1.4 \
       --no-audio \
       --v4l2-sink=/dev/video5
+}
+
+# yazi
+function y() {
+  local tmp cwd
+  tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+  command yazi "$@" --cwd-file="$tmp"
+  IFS= read -r -d '' cwd <"$tmp"
+  [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd" || builtin true
+  command rm -f -- "$tmp"
 }
 
 ### --- Environment & Paths --- ###
@@ -80,28 +92,10 @@ function zvm_after_init() {
 
 ### ---Configuration & Styles --- ###
 
-# Catppuccin Mocha Theme
-color_bg="#313244"
-color_text="#cdd6f4"
-color_red="#f38ba8"
-color_blue="#89b4fa"
-color_green="#a6e3a1"
-color_lavender="#b4befe"
-color_rosewater="#f5e0dc"
+source "$HOME/.config/fzf/themes/noctalia.sh"
+zstyle ':fzf-tab:*' use-fzf-default-opts yes
 
-export FZF_DEFAULT_OPTS=" \
-  --color=bg+:${color_bg},spinner:${color_lavender},hl:${color_lavender} \
-  --color=fg:${color_text},header:${color_lavender},info:${color_lavender},pointer:${color_lavender},marker:${color_lavender} \
-  --color=fg+:${color_text},prompt:${color_lavender},hl+:${color_lavender} \
-  --color=border:${color_lavender} \
-  --prompt='❯ ' --marker='✓' --pointer='▶' "
-
-zstyle ':fzf-tab:*' fzf-flags \
-  --height=70% \
-  --color=bg+:${color_bg},spinner:${color_lavender},hl:${color_lavender} \
-  --color=fg:${color_text},header:${color_lavender},info:${color_lavender},pointer:${color_lavender},marker:${color_lavender},border:${color_lavender},separator:${color_lavender}
-
-# Image Previews (Chafa) & File Previews (Bat)
+# Image Preview in fzf-tab
 zstyle ':fzf-tab:complete:*' fzf-preview \
   'mime=$(file --mime-type -b "$realpath"); \
   if [[ $mime == image/* ]]; then \
@@ -110,7 +104,7 @@ zstyle ':fzf-tab:complete:*' fzf-preview \
     ls --color=always "$realpath"; \
   else \
     bat --style=numbers --color=always --line-range :500 "$realpath" 2>/dev/null; \
-    fi'
+  fi'
 
 ### --- Prompt --- ###
 
