@@ -22,6 +22,7 @@
 
 "Mod+Ctrl+V" = { action = "spawn vicinae vicinae://launch/clipboard/history", repeat = false }
 "Mod+Ctrl+E" = { action = "spawn vicinae vicinae://launch/core/search-emojis", repeat = false }
+"Ctrl+Alt+V" = { action = "spawn vicinae dictation toggle", repeat = false }
 
 # ------------------------------------------------------------------------------
 # Noctalia
@@ -38,18 +39,18 @@
 "Mod+Comma" = { action = "spawn noctalia msg settings-toggle", repeat = false }
 "Mod+S" = { action = "spawn noctalia msg panel-toggle control-center", repeat = false }
 "Mod+Ctrl+B" = { action = "spawn noctalia msg bar-show", repeat = false }
-"Mod+Ctrl+Alt+R" = { action = "spawn noctalia msg config-reload", repeat = false }
 "Mod+Ctrl+Delete" = { action = "spawn noctalia msg panel-toggle session", repeat = false }
-
-# Plugins
 "Mod+Ctrl+N" = { action = "spawn noctalia msg panel-toggle control-center notifications", repeat = false }
 "Mod+Ctrl+U" = { action = "spawn noctalia msg panel-toggle noctalia/notes:panel", repeat = false }
-"Mod+Ctrl+Z" = { action = "spawn noctalia msg plugin alexander/screen-toolkit:service all toggle", repeat = false }
-"Mod+Ctrl+C" = { action = "spawn noctalia msg plugin alexander/screen-toolkit:service all colorPicker", repeat = false }
-"Mod+Ctrl+T" = { action = "spawn noctalia msg plugin alexander/screen-toolkit:service all ocr", repeat = false }
-"Mod+Ctrl+Q" = { action = "spawn noctalia msg plugin alexander/screen-toolkit:service all qr", repeat = false }
-"Mod+Ctrl+M" = { action = "spawn noctalia msg plugin alexander/screen-toolkit:service all measure", repeat = false }
-"Mod+Ctrl+Y" = { action = "spawn noctalia msg plugin alexander/screen-toolkit:service all lens", repeat = false }
+
+# Plugins
+"Mod+Ctrl+T" = { action = "submap screen-toolkit", repeat = false }
+"submap[screen-toolkit],T" = { action = "spawn noctalia msg plugin alexander/screen-toolkit:service all toggle", submap = "reset"}
+"submap[screen-toolkit],O" = { action = "spawn noctalia msg plugin alexander/screen-toolkit:service all ocr", submap = "reset"}
+"submap[screen-toolkit],Q" = { action = "spawn noctalia msg plugin alexander/screen-toolkit:service all qr", submap = "reset"}
+"submap[screen-toolkit],M" = { action = "spawn noctalia msg plugin alexander/screen-toolkit:service all measure", submap = "reset"}
+"submap[screen-toolkit],L" = { action = "spawn noctalia msg plugin alexander/screen-toolkit:service all lens", submap = "reset"}
+"submap[screen-toolkit],C" = { action = "spawn noctalia msg plugin alexander/screen-toolkit:service all colorPicker", submap = "reset"}
 
 # ------------------------------------------------------------------------------
 # Scratchpads
@@ -70,10 +71,9 @@
 # ------------------------------------------------------------------------------
 
 # System
-"Mod+Ctrl+Alt+Delete" = { action = "dpms-off", repeat = false }
+"Mod+Ctrl+Alt+R" = { action = "config-reload", repeat = false }
 "Mod+Ctrl+Alt+Slash" = { action = "cheatsheet-toggle", repeat = false }
 "Mod+Alt+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
-"Mod+Ctrl+Alt+Shift+R" = { action = "config-reload", repeat = false }
 
 "Mod+D" = { action = "overview-toggle", repeat = false }
 "Mod+Alt+D" = { action = "workspace-toggle-show-desktop", repeat = false }
@@ -87,7 +87,6 @@
 
 "Mod+Alt+Minus" = { action = "window-minimize", repeat = false }
 "Mod+Alt+Equal" = { action = "window-restore-minimized", repeat = false }
-# "Mod+Alt+Space" = { action = "column-center", repeat = false }
 
 # ------------------------------------------------------------------------------
 # Screencast

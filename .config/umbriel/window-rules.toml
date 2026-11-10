@@ -1,9 +1,10 @@
 # ------------------------------------------------------------------------------
 # Global
 # ------------------------------------------------------------------------------
+
 [[window_rule]]
-opacity = 0.95
-blur = false
+opacity = 0.92
+blur = true
 blur_popups = false
 default_maximize = false
 default_position = { x = 0, y = 0, anchor = "center" }
@@ -26,6 +27,7 @@ tearing = true
 # ------------------------------------------------------------------------------
 # Applications
 # ------------------------------------------------------------------------------
+
 [[window_rule]]
 match.app_id = [ "^brave-*", "firefox", "Loupe", "celluloid"]
 opacity = 1.0
@@ -49,15 +51,10 @@ match.title = '^(Picture-in-Picture|Picture in picture)$'
 default_floating = true
 default_maximize = false
 
-[[window_rule]]
-match.app_id = "it.catboy.ripdrag"
-match.title = "it.catboy.ripdrag"
-default_floating = true
-default_floating_size = { width = 0.1, height = 0.1 }
-
 # ------------------------------------------------------------------------------
 # Noctalia
 # ------------------------------------------------------------------------------
+
 [[window_rule]]
 match.app_id = "^dev.noctalia.Noctalia$"
 default_maximize = true
@@ -70,13 +67,14 @@ default_maximize = false
 # ------------------------------------------------------------------------------
 # Scratchpads
 # ------------------------------------------------------------------------------
+
 [[window_rule]]
 match.app_id = "^scratchpad-terminal$"
 default_scratchpad = "terminal"
 default_floating = true
 default_maximize = false
 default_focused = true
-default_floating_size = { width = 0.7, height = 0.7 }
+default_floating_size = { width = 0.8, height = 0.8 }
 
 [[window_rule]]
 match.app_id = "obsidian"
@@ -116,6 +114,7 @@ default_floating_size = { width = 0.9, height = 0.9 }
 # ------------------------------------------------------------------------------
 # Password managers / authentication agents
 # ------------------------------------------------------------------------------
+
 [[window_rule]]
 match.app_id = "^polkit-gnome-authentication-agent-1$"
 block_capture = true

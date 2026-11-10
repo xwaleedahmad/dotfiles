@@ -6,17 +6,15 @@ corner_radius = 2
 drag_opacity = 0.75
 opaque_fullscreen = true
 
-
 [appearance.blur]
 enabled = true
 optimized = true
 passes = 2
-radius = 3
+radius = 4
 noise = 0.02
 brightness = 0.9
 contrast = 0.9
-saturation = 1.1
-
+saturation = 1
 
 [appearance.title_bar]
 mode = "off"
@@ -27,7 +25,6 @@ buttons = ["minimize", "maximize", "close"]
 button_corner_radius = -1
 button_glyph = "hover"
 button_background = true
-
 
 [appearance.tab_bar]
 style = "indicator"
@@ -45,13 +42,11 @@ hide_when_single = false
 max_tabs = 0
 overflow = "scroll"
 
-
 [appearance.shadow]
 enabled = false
 softness = 10
 offset_x = 2
 offset_y = 2
-
 
 [colors]
 shadow = "#00000077"

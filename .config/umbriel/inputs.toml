@@ -6,10 +6,8 @@ mod_right_double_click = "maximize"
 
 
 [input.keyboard]
-# layout = ""
-# variant = ""
-# options = "caps:swapescape"
-# model = ""
+layout = "us"
+variant = " "
 repeat_rate = 25
 repeat_delay = 600
 numlock_toggle = true
