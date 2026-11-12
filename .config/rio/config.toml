@@ -1,0 +1,51 @@
+theme = "noctalia"
+confirm-before-quit = false
+hide-mouse-cursor-when-typing = true
+
+margin = [4]
+
+[editor]
+program = "nvim"
+args = []
+
+[navigation]
+mode = "Plain"
+hide-if-single = true
+
+[fonts]
+size = 20
+family = "FiraCode Nerd Font Mono"
+use-drawable-chars = true
+disable-warnings-not-found = false
+
+[windows]
+decorations = "Disabled"
+
+[effects]
+trail-cursor = true
+trail-cursor-opacity = 0.6
+
+[bindings]
+keys = [
+  { key = "X", with = "control | shift", action = "ToggleViMode" },
+  { key = "O", with = "control", action = "ScrollPageUp" },
+  { key = "I", with = "control", action = "ScrollPageDown" },
+  { key = "O", with = "control | shift", action = "ScrollToTop" },
+  { key = "I", with = "control | shift", action = "ScrollToBottom" },
+]
+
+[hints]
+alphabet = "jfkdls;ahgurieowpq"
+
+[[hints.rules]]
+regex = 'https?://[^\s<>"\x27()\[\]{}]+|\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b|\b[0-9a-f]{7,40}\b|(?:~|\.\.?|/)?(?:[\w.-]+/)+[\w.-]+|\b\d{1,3}(?:\.\d{1,3}){3}\b'
+hyperlinks = true
+post-processing = true
+
+[hints.rules.binding]
+key = "Space"
+mods = ["Control", "Shift"]
+
+[hints.rules.action]
+action = "Paste"
+command = "xdg-open"
