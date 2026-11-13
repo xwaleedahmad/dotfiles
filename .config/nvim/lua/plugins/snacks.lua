@@ -16,6 +16,48 @@ require("snacks").setup({
 				[[ ██████  █████████████████████ ████ █████ █████ ████ ██████ ]],
 				[[                                                                       ]],
 			}, "\n"),
+			keys = {
+				{
+					icon = " ",
+					key = "a",
+					desc = "New File",
+					action = function()
+						vim.cmd("ene")
+					end,
+				},
+				{
+					icon = "󰈢 ",
+					key = "r",
+					desc = "Recent Files",
+					action = function()
+						Snacks.picker.recent()
+					end,
+				},
+				{
+					icon = " ",
+					key = "p",
+					desc = "Open Projects",
+					action = function()
+						Snacks.picker.projects()
+					end,
+				},
+				{
+					icon = " ",
+					key = "c",
+					desc = "Config",
+					action = function()
+						Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
+					end,
+				},
+				{
+					icon = "󰍃 ",
+					key = "q",
+					desc = "Quit",
+					action = function()
+						vim.cmd("qa")
+					end,
+				},
+			},
 		},
 		sections = {
 			{ section = "header" },
@@ -30,6 +72,14 @@ require("snacks").setup({
 				hidden = true,
 				ignored = true,
 				exclude = { ".git", "node_modules", "vendor", ".next" },
+			},
+			projects = {
+				dev = {
+					"~/Projects/",
+					"/home/waleed/dev/projects/",
+				},
+				max_depth = 2,
+				recent = false,
 			},
 		},
 	},

@@ -4,7 +4,6 @@ local ensure_installed = {
 	"bash",
 	"diff",
 	"zsh",
-	"kdl",
 	"lua",
 	"luadoc",
 	"vim",
@@ -34,9 +33,19 @@ local ensure_installed = {
 treesitter.install(ensure_installed)
 
 vim.api.nvim_create_autocmd("FileType", {
-	callback = function(args)
-		pcall(vim.treesitter.start, args.buf)
+	callback = function(event)
+		local buf = event.buf
+		local ok = pcall(vim.treesitter.start, buf)
 
-		vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+		if not ok then
+			return
+		end
+
+		vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+
+		for _, win in ipairs(vim.fn.win_findbuf(buf)) do
+			vim.wo[win].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+			vim.wo[win].foldmethod = "expr"
+		end
 	end,
 })

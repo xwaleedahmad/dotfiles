@@ -24,26 +24,18 @@ require("mason-lspconfig").setup({
 		"vtsls",
 		"prismals",
 		"intelephense",
-		"laravel_ls",
-
 		"copilot",
 	},
 })
 
 require("mason-tool-installer").setup({
 	ensure_installed = {
-		-- Formatters
-		"dockerfmt",
-		"prettier",
 		"stylua",
 		"shfmt",
-		"pint",
-		"blade-formatter",
-
-		-- Linters
-		"eslint_d",
 		"shellcheck",
-		"phpstan",
+		"dockerfmt",
+		"mdformat",
+		"markdownlint-cli2",
 	},
 })
 

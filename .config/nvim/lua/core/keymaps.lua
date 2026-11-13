@@ -76,7 +76,7 @@ end, { desc = "Toggle Line Wrap" })
 
 -- Copilot
 map("n", "<leader>ul", "<cmd>CopilotToggle<cr>", { desc = "Toggle Copilot (global)" })
-map("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<CR>", { desc = "Toggle Markdown Preview" })
+map("n", "<leader>ump", "<cmd>MarkdownPreviewToggle<CR>", { desc = "Toggle Markdown Preview" })
 
 -- Trouble keymaps
 map("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<CR>", {
@@ -97,8 +97,3 @@ map("n", "<leader>xq", "<cmd>Trouble qflist toggle<CR>", {
 map("n", "<leader>xl", "<cmd>Trouble loclist toggle<CR>", {
 	desc = "Location List",
 })
-
--- Camouflage
-map("n", "<leader>ut", "<cmd>CamouflageToggle<CR>", { desc = "Toggle Show/Hide Secrets" })
-map("n", "<leader>ct", "<cmd>CamouflageReveal<CR>", { desc = "Reveal Secret under cursor" })
-map("n", "<leader>cy", "<cmd>CamouflageYank<CR>", { desc = "Yank Secrets Value" })

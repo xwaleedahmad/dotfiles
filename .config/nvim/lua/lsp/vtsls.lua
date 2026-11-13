@@ -6,11 +6,16 @@ vim.lsp.config("vtsls", {
 		"typescriptreact",
 	},
 	root_markers = {
+		"tsconfig.json",
+		"jsconfig.json",
+		"package.json",
+		"pnpm-workspace.yaml",
 		"package-lock.json",
 		"yarn.lock",
 		"pnpm-lock.yaml",
 		"bun.lockb",
 		"bun.lock",
+		".git",
 	},
 	single_file_support = true,
 	init_options = {

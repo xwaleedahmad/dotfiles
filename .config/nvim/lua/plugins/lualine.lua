@@ -1,5 +1,6 @@
 local ignored = {
 	copilot = true,
+	tailwindcss = true,
 }
 
 local function lsp_name()
@@ -12,6 +13,45 @@ local function lsp_name()
 	end
 
 	return table.concat(names, ", ")
+end
+
+local function js_tooling()
+	local tools = require("plugins.formatting").get_js_tools(0)
+	if tools.formatter == "biome" then
+		return "biome"
+	elseif tools.formatter == "prettier" then
+		return "prettier"
+	end
+	return ""
+end
+
+local function tooling_status()
+	local items = {}
+	local filetype = vim.bo.filetype
+	local web_filetype = filetype == "javascript"
+		or filetype == "javascriptreact"
+		or filetype == "typescript"
+		or filetype == "typescriptreact"
+		or filetype == "json"
+		or filetype == "jsonc"
+		or filetype == "css"
+		or filetype == "scss"
+		or filetype == "graphql"
+		or filetype == "html"
+		or filetype == "less"
+
+	local formatter = web_filetype and js_tooling() or ""
+	if formatter ~= "" then
+		table.insert(items, formatter)
+	end
+
+	local servers = vim.api.nvim_win_get_width(0) >= 120 and lsp_name() or ""
+	if servers ~= "" then
+		table.insert(items, servers)
+		return "󰒋 " .. table.concat(items, ", ")
+	end
+
+	return table.concat(items, ", ")
 end
 
 require("lualine").setup({
@@ -45,13 +85,7 @@ require("lualine").setup({
 			},
 		},
 		lualine_x = {
-			{
-				lsp_name,
-				icon = "󰒋",
-				cond = function()
-					return vim.api.nvim_win_get_width(0) >= 120 and lsp_name() ~= ""
-				end,
-			},
+			tooling_status,
 		},
 		lualine_y = { "location" },
 		lualine_z = { "progress" },

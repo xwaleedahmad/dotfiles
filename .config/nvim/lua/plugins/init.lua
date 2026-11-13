@@ -1,10 +1,10 @@
 vim.pack.add({
 	-- UI Components
 	"https://github.com/catppuccin/nvim",
-	"https://github.com/akinsho/bufferline.nvim",
 	"https://github.com/nvim-lualine/lualine.nvim",
-	"https://github.com/MunifTanjim/nui.nvim", -- dependency for noice
 	"https://github.com/folke/noice.nvim",
+	"https://github.com/MunifTanjim/nui.nvim", -- dependency for noice
+	-- "https://github.com/akinsho/bufferline.nvim",
 
 	-- Core Utilities
 	"https://github.com/nvim-mini/mini.icons",
@@ -14,11 +14,9 @@ vim.pack.add({
 	"https://github.com/lewis6991/gitsigns.nvim",
 	"https://github.com/kdheepak/lazygit.nvim",
 	"https://github.com/chentoast/marks.nvim",
-	"https://github.com/sphamba/smear-cursor.nvim",
 	"https://github.com/3rd/image.nvim",
 	"https://github.com/MeanderingProgrammer/render-markdown.nvim",
 	{ src = "https://github.com/iamcco/markdown-preview.nvim", build = ":call mkdp#util#install()" },
-	"https://github.com/zeybek/camouflage.nvim",
 
 	-- Treesitter & Syntax
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", branch = "main", build = ":TSUpdate" },
@@ -61,7 +59,6 @@ require("mini.ai").setup({ n_lines = 500 })
 require("mini.surround").setup()
 require("mini.pairs").setup()
 require("mini.splitjoin").setup({ mappings = { toggle = "sj" } })
-require("smear_cursor").setup()
 require("plugins.git")
 require("marks").setup()
 require("image").setup({ max_height_window_percentage = 80 })
@@ -79,8 +76,8 @@ require("plugins.linting")
 
 -- UI components
 require("plugins.lualine")
-require("plugins.bufferline")
 require("trouble").setup()
+-- require("plugins.bufferline")
 
 -- For extra plugins that needs little configruation
 require("plugins.misc")
